@@ -4,8 +4,18 @@ import FilaFinal from './FilaFinal';
 
 
 function Carrito(){
-    return <div>
+    if (false){
+        return <div>
         <TopNav category = {5}/>
+        <br />
+        <h1>Mi Carrito</h1>
+        <h2 className='centrar'>Aún no tienes nada en tu Carrito</h2>
+        </div>
+    }
+    else{
+        return <div>
+        <TopNav category = {5}/>
+        <br />
         <h1>Mi Carrito</h1>
     <table >
         <thead>
@@ -26,6 +36,7 @@ function Carrito(){
     <br />
     <a href="/seguimiento" className='centrar'>Seguir mi pedido</a>
     </div>
+    }
 }
 
 export default Carrito

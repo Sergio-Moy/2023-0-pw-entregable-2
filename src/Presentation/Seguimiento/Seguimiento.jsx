@@ -6,6 +6,7 @@ function Seguimiento(){
         return <div>
             <TopNav category={5}/>
             <br />
+            <h1>Seguimiento de Pedido</h1>
             <h2 className="centrar">No tienes ningún pedido pendiente</h2>
         </div>
     }
@@ -13,12 +14,13 @@ function Seguimiento(){
         return <div>
         <TopNav category={5}/>
         <br />
+        <h1>Seguimiento de Pedido</h1>
         <table>
-            <thead>
+            <thead><tr>
                 <th><h2>Restaurante</h2></th>
                 <th><h2>Pedido</h2></th>
                 <th><h2>Estado</h2></th>
-            </thead>
+                </tr></thead>
             <tbody>
                 <FilaSeguimiento/>
                 <FilaSeguimiento/>
