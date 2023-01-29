@@ -6,6 +6,7 @@ import Carrito from './Presentation/Carrito/Carrito';
 import ListadoRestaurantes from './Presentation/ListadoRestaurantes/ListadoRestaurantes';
 import MainPage from './Presentation/MainPage/MainPage';
 import Recomendaciones from './Presentation/Recomendaciones/Recomendaciones';
+import Seguimiento from './Presentation/Seguimiento/Seguimiento';
 import './Style/style.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,6 +18,7 @@ root.render(
         <Route path='/recomendaciones' element={<Recomendaciones/>}/>
         <Route path='/listadorestaurantes' element={<ListadoRestaurantes/>}/>
         <Route path='/micarrito' element={<Carrito/>}/>
+        <Route path='/seguimiento' element={<Seguimiento/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

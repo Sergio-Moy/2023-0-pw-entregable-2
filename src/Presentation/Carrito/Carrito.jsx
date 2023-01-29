@@ -1,5 +1,6 @@
 import TopNav from '../Global/TopNav';
 import FilaCarrito from './FilaCarrito';
+import FilaFinal from './FilaFinal';
 
 
 function Carrito(){
@@ -15,10 +16,15 @@ function Carrito(){
                 <th><h2>Cantidad</h2></th>
                 <th></th>
             </tr>
-            <FilaCarrito/>
-            <FilaCarrito/>
         </thead>
+        <tbody>
+            <FilaCarrito/>
+            <FilaCarrito/>
+            <FilaFinal/>
+        </tbody>
     </table>
+    <br />
+    <a href="/seguimiento" className='centrar'>Seguir mi pedido</a>
     </div>
 }
 
