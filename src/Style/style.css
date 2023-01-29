@@ -1,0 +1,464 @@
+/*Trabajo*/
+@font-face {
+  font-family: Macondo;
+  src: url(Macondo-Regular.ttf);
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(Raleway.ttf);
+}
+
+div{
+  color: #ffffff;
+}
+
+p{
+  color: #ffffff;
+  font-family: Raleway;
+}
+
+button{
+  color: #ffffff;
+  background-color: rgb(60, 38, 139);
+  font-family: Raleway;
+}
+
+body button{
+  color: #ffffff;
+  background-color: rgba(48, 26, 126, 0.5);
+  font-family: Raleway;
+}
+
+button:hover{
+  background-color: #f20fb6;
+}
+
+button:active{
+  background-color: #f29828;
+}
+
+body h1 {
+  color: #ffffff;
+  font-family: Raleway;
+}
+
+body h2 {
+  color:#ffffff;
+  font-family: Raleway;
+}
+
+h2 a{
+  font-size: 80%;
+  font-family: Raleway;
+  color: #ffffff;
+}
+
+h2 a:link {
+  color: #ffffff;
+}
+
+tr th{
+  text-align: center;
+  font-family: Raleway;
+  font-size: 14px;
+}
+
+h2 a:hover {
+  color: #f20fb6;
+  text-decoration: none;
+}
+
+h2 a:active {
+  color: #f29828;
+  text-decoration: none;
+}
+.logorestaurante{
+  width: 200px;
+  height: 200px;
+  display: block;
+margin: auto;
+background-color: black;
+}
+/*Centrar tabla*/
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+body a{
+  color: #ffffff;
+  font-family: Raleway;
+}
+body a:hover{
+  color: #f20fb6;
+  text-decoration: none;
+}
+body a:active{
+  color: #f29828;
+  text-decoration: none;
+}
+
+img{
+  border-radius: 5%;
+}
+
+
+
+td {
+    background-color: #3c268b88;
+    font-size: 25px;
+    color:#ffffff;
+    font-family: Raleway;
+    text-align: center;
+}
+
+.cambiar-estado {
+  background-color:#3c268b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  }
+input[type="text"] {
+padding: 0.5em;
+margin-bottom: 1em;
+width: 300px;
+}
+
+input[type="submit"] {
+background-color: #3c268b;
+color: white;
+padding: 0.5em 1em;
+border: none;
+cursor: pointer;
+}
+
+input[type="text"]{
+  color: #3c268b;
+  font-family: Raleway;
+}
+
+input[type="email"]{
+  color: #3c268b;
+  font-family: Raleway;
+}
+
+input[type="password"]{
+  color: #3c268b;
+  font-family: Raleway;
+}
+
+form{
+  color: #ffffff;
+  font-family: Raleway;
+}
+
+.form-container {
+width: 500px;
+margin: 0 auto;
+padding: 1em;
+background-color: rgba(255, 255, 255, 0.8);
+border-radius: 10px;
+}
+
+.closed {
+color: #4f4f4f;
+background-color: #dddddd88;
+}
+
+.closed img {
+  filter: grayscale(100%);
+}
+
+
+/*
+Indice:
+clase_0: hipervinculos
+clase_1: h2, clase_2 y 3: p
+*/
+
+.clase_2{
+    font-size: 25px;
+    font-family: 'Raleway';
+    color: rgb(108, 230, 134);/*color de texto*/
+    text-shadow: 1px 1px 1px black;/*Sombra al texto*/
+}
+h2{
+    font-size: 30px;
+    color: rgb(241, 168, 84);/*color de texto*/
+    text-shadow: 1px 1px 1px black;/*Sombra al texto*/
+}
+.clase_3{
+    font-size: 25px;
+    font-family: Raleway
+    
+}
+.clase_3, .clase_0, h1{
+    text-align: center;
+    color: white;/*color de texto*/
+}
+.clase_0{
+  font-size: 20px;
+}
+/*Imagen a la derecha de todo*/
+.alinear_der{
+    text-align: right;
+    padding-right: 10%;
+        
+}
+
+/* Poner una imagen como fondo de pantalla*/
+body {
+    background-image: url("/imagenes/bg.jpg");
+    background-size: 20%;
+    
+}
+
+/* spacing */
+ HEAD
+
+  table .cm{
+    table-layout: fixed;/*dar a las columnas un tamaño segun el 
+    ancho de sus celdas*/
+    width: 100%;/*La tabla intentara ajustar su contenido (letras)
+    con el espacio rectangular en donde fue ubicado.*/
+    border-collapse: collapse;/*Quitar los bordes de la tabla,
+    mejor conocido como espacios en blaco que rodea la tabla*/
+
+  } 
+
+  /*
+  table {
+    table-layout: fixed; dar a las columnas un tamaño segun el 
+    ancho de sus celdas 
+    width: 100%; La tabla intentara ajustar su contenido (letras)
+    con el espacio rectangular en donde fue ubicado.
+    border-collapse: collapse; Quitar los bordes de la tabla,
+    mejor conocido como espacios en blaco que rodea la tabla
+  } */
+/* typography */
+  /*th=encabezado y td=cuerpo
+  letter-spacing=espacio entre letras de una palabra.
+  arbol != a r b o l
+  
+  td {
+    letter-spacing: 1px;
+  }
+  
+  /*Centrar el texto tanto el encabezado como el cuerpo*/
+
+  /*tfoot es un encabezado pero en la parte inferior de la tabla*/
+  /*
+  tfoot th {
+    text-align: right;
+  }
+  */
+  /*Diseño*/
+  .cabecera {
+    /*imagen gif*/
+    background: url("/imagenes/f8b0d8ba8a7fd9a480f88e9cd347ae6e.gif");
+    color: white;/*color de texto*/
+    text-shadow: 1px 1px 1px black;/*Sombra al texto*/
+  }
+
+  /*Sombra que se le agrega a la imagen*/
+  .columna {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+    
+  }
+HEAD
+  /*Bordado a la tabla*/
+  tr{
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 10px
+
+  }
+
+  /*Centrar las cajas donde se ingresa el texto*/ /* Centrar todo-*/
+  .centrar{
+    text-align: center; /*Texto centrado*/
+    display: table; /*Tambien sirve pa centrar tabla*/
+    margin: auto; /*tabla centrada dentro de la página*/
+  }
+  .centered{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+#contenedorcentrado {
+  
+  
+  background-color: #c4aae7;
+  
+  /*opacity: 0.50;
+  filter: alpha(opacity=50);*/
+  
+  
+  
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+#contenedorcentrado2 {
+
+  background-color: #c4aae7;
+  
+  /*opacity: 0.50;
+  filter: alpha(opacity=50);*/
+  padding-left: 14px;
+  padding-right: 14px;
+  
+  width: 200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.topnav a {
+  background-color: #3c268b;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-family: Raleway;
+  font-size: 15px;
+}
+
+.topnav a:hover {
+  background-color: #f20fb6;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.topnav .current{
+  background-color: #00000000;
+}
+
+.topnav a:active {
+  background-color: #f29828;
+  color: #ffffff
+}
+
+.col-md-3 {
+  padding: 15px;
+  margin-top: 10px;
+  margin-left:70px;
+
+
+}
+
+.product-container{
+  text-align: center;
+
+}
+
+.page-nav{
+  color: #ffffff;
+  font-family: Raleway;
+}
+
+#dona {
+  margin-right: 30%;
+  margin-left: 30%
+}
+
+.boton1 {
+   font-size: 20px;
+   margin-bottom: 10%
+}
+.titulo{
+  padding-top: 2%;
+}
+/*
+Absolute toma como referencia 
+Elemento posicionado mas cercano, no static "no estatico"
+Este atributo no se puede aplicar con su hermano que seria 
+terjetaCarrusel, por ende se usa del padre. En conclusion
+itemCarrusel: relative
+flechasCarrusel: absolute
+Provocando que "tarjetaCarrusel" sea el que esta debajo de 
+flechasCarrusel
+*/
+.itemCarrusel{
+  height: 100%; /*Para que coincida con
+  tamaño del contenedor*/
+  position: relative;
+}
+.tarjetaCarrusel{
+  height: 100%;
+}
+.flechasCarrusel{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+/*El contenedorItemsCarrusel tiene el mismo
+  tamaño que el primer Item carrusel, con overflow: hidden
+  podemos recortar todos los demas itemCarrusel que no estan
+  dentro de este.*/
+
+.contenedorItemsCarrusel{
+  height: 350px;/*Para fijar el tamaño del contenedor*/
+  overflow: hidden;
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+  
+}
+
+.carrousel {
+  display: grid;
+  grid-auto-flow: column;
+  scroll-behavior: auto;
+  gap: 1.2rem;
+  overflow-y: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carrousel::-webkit-scrollbar {
+  display: none;
+  
+}
+
+.card {
+  scroll-snap-align: start;
+  border-radius: 30px;
+  height: 100%;
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3c268b88;
+}
+
+
+
+
+
+
+
+
+
+
+
+
