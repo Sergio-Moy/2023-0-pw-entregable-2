@@ -1,8 +1,4 @@
 /*Trabajo*/
-@font-face {
-  font-family: Macondo;
-  src: url(Macondo-Regular.ttf);
-}
 
 @font-face {
   font-family: Raleway;
@@ -210,7 +206,7 @@ h2{
 
 /* Poner una imagen como fondo de pantalla*/
 body {
-    background-image: url("/imagenes/bg.jpg");
+    background-image: url("/src/Style/img/bg.jpg");
     background-size: 20%;
     
 }
@@ -257,7 +253,7 @@ body {
   /*Diseño*/
   .cabecera {
     /*imagen gif*/
-    background: url("/imagenes/f8b0d8ba8a7fd9a480f88e9cd347ae6e.gif");
+    background: url("/src/Style/img/f8b0d8ba8a7fd9a480f88e9cd347ae6e.gif");
     color: white;/*color de texto*/
     text-shadow: 1px 1px 1px black;/*Sombra al texto*/
   }
