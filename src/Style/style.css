@@ -315,9 +315,10 @@ HEAD
   background-color: #3c268b;
   color: #ffffff;
   text-align: center;
-  padding: 15px;
+  padding: 0.5%;
   font-family: Raleway;
   font-size: 15px;
+  width: 100%;
 }
 
 .topnav a:hover {
