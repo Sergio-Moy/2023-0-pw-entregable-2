@@ -2,7 +2,15 @@ import TopNav from "../Global/TopNav"
 import FilaSeguimiento from "./FilaSeguimiento"
 
 function Seguimiento(){
-    return <div>
+    if(false){
+        return <div>
+            <TopNav category={5}/>
+            <br />
+            <h2 className="centrar">No tienes ningún pedido pendiente</h2>
+        </div>
+    }
+    else{
+        return <div>
         <TopNav category={5}/>
         <br />
         <table>
@@ -19,6 +27,7 @@ function Seguimiento(){
         <br />
         <p className="centrar">Recoge tus productos listos con el código <b>123654</b></p>
     </div>
+    }
 }
 
 export default Seguimiento
