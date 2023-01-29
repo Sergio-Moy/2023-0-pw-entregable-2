@@ -1,9 +1,9 @@
-function FilaCarrito(){
+function FilaCarrito(props){
     return <tr>
-        <td>Bembos</td>
-        <td>Combo Cheese</td>
-        <td>16.5</td>
-        <td>2</td>
+        <td>{props.restaurante}</td>
+        <td>{props.producto}</td>
+        <td>{props.precio}</td>
+        <td>{props.cantidad}</td>
         <td><button type="button" className="btn btn-outline-light">-</button>
         <button type="button" className="btn btn-outline-light">+</button></td>
     </tr>

@@ -1,15 +1,39 @@
 import TopNav from '../Global/TopNav';
-import FilaCarrito from './FilaCarrito';
-import FilaFinal from './FilaFinal';
-
+import TablaCarrito from './TablaCarrito';
 
 function Carrito(){
-    if (false){
+
+    /*DATOS DE PRUEBA*/
+    const p1 = {
+        Restaurante: "Bembos",
+        Producto: "Combo Cheese",
+        Precio: 16.5,
+        Cantidad: 1,
+    }
+
+    const p2 = {
+        Restaurante: "Bembos",
+        Producto: "Cono Vainilla",
+        Precio: 2.5,
+        Cantidad: 2,
+    }
+    
+    const arr = JSON.stringify({
+        arreglo : [p1, p2]
+    })
+
+    sessionStorage.setItem("CARRITO", arr)
+    
+    const data = JSON.parse(sessionStorage.getItem("CARRITO"))
+
+    if (data === null || data === []){
         return <div>
         <TopNav category = {5}/>
         <br />
         <h1>Mi Carrito</h1>
         <h2 className='centrar'>Aún no tienes nada en tu Carrito</h2>
+        <br />
+        <a href="/seguimiento" className='centrar'>Seguir mi pedido</a>
         </div>
     }
     else{
@@ -27,11 +51,7 @@ function Carrito(){
                 <th></th>
             </tr>
         </thead>
-        <tbody>
-            <FilaCarrito/>
-            <FilaCarrito/>
-            <FilaFinal/>
-        </tbody>
+            <TablaCarrito />
     </table>
     <br />
     <a href="/seguimiento" className='centrar'>Seguir mi pedido</a>
