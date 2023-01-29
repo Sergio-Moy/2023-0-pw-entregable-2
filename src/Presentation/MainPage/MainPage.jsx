@@ -1,5 +1,5 @@
 import TopNav from '../Global/TopNav';
-import LogoNeon from './img/LogoNeon.png'
+import LogoNeon from '../../Style/img/LogoNeon.png'
 
 function MainPage(){
     return <div>
