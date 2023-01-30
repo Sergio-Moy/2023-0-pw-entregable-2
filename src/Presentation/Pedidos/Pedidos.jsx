@@ -3,6 +3,7 @@ import Listapedidos from '../Pedidos/Componentes/ListaPedidos';
 import VinetaPedidos from "./Componentes/VinetaPedidos";
 import TopNav from '../Global/TopNav';
 function Pedidos(){
+    //ASDF
     const [modoVisualizacion, setModoVisualizacion] = useState("tabla")
     const butOnClick = function() {
         if (modoVisualizacion === "tabla") {
