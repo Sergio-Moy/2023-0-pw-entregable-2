@@ -1,20 +1,28 @@
 import FilaSeguimiento from "./FilaSeguimiento"
 
 function TablaSeguimiento(){
-    let tabla = []
-    let datos =  JSON.parse(sessionStorage.getItem("PEDIDOSMATCH"))
-    let data = [
-        {Restaurante : "bebmos",
-    Producto : "aaaa",
-    Estado : "listo"}
-    ]
+    
+   const arreglo = JSON.parse(sessionStorage.getItem("PEDIDOSMATCH")).arreglo
 
+   let tabla = []
 
-    for(let i = 0; i < data.length; i++){
-        let fila = <FilaSeguimiento restaurante={data[i].Restaurante} producto={data[i].Producto} estado={data[i].Estado}/>
-        tabla.push(fila)
-    }
-    return tabla
+   for(let i = 0; i<arreglo.length; i++){
+        let data = arreglo[i]
+        tabla.push( <FilaSeguimiento restaurante = {data.Restaurante} producto = {data.Producto} estado = {data.Estado}/>)
+   }
+
+    return <table>
+        <thead>
+            <tr>
+                <th>Restaurante</th>
+                <th>Producto</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {tabla}
+        </tbody>
+    </table>
 }
 
-export default TablaSeguimiento()
+export default TablaSeguimiento

@@ -3,8 +3,8 @@ import TablaCarrito from './TablaCarrito';
 
 function Carrito(){
 
-    /*DATOS DE PRUEBA*/
-    /*const p1 = {
+    /*DATOS DE PRUEBA - HASTA LINEA 25*/
+    const p1 = {
         Restaurante: "Bembos",
         Producto: "Combo Cheese",
         Precio: 16.5,
@@ -22,7 +22,7 @@ function Carrito(){
         arreglo : [p1, p2]
     })
 
-    sessionStorage.setItem("CARRITO", arr)*/
+    sessionStorage.setItem("CARRITO", arr)
     
     const data = JSON.parse(sessionStorage.getItem("CARRITO"))
 

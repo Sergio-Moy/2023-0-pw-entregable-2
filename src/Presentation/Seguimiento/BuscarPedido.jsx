@@ -5,7 +5,7 @@ import BuscarForm from "./BuscarForm"
 
 
 function BuscarPedido(){
-    /*DATOS DE PRUEBA*/
+    /*DATOS DE PRUEBA - HASTA LINEA 35*/
     const p1 = {
         Codigo: "12345",
         Restaurante: "Bembos",

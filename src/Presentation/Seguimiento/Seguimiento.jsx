@@ -4,41 +4,40 @@ import TablaSeguimiento from "./TablaSeguimiento"
 
 function Seguimiento(props){
     const codigo = JSON.parse(sessionStorage.getItem("CODIGO_BUSCADO"))
-    const arr = []
-    const pedidos = JSON.parse(sessionStorage.getItem("PEDIDOS")).arreglo
-    for(let i = 0; i< pedidos.length; i++){
-        if(pedidos[i].Codigo == codigo){
-            arr.push(pedidos[i])
+
+    let arr = []
+
+    const js = sessionStorage.getItem("PEDIDOS")
+    const parsed = JSON.parse(js)
+    const arreglo = parsed.arreglo
+
+    for(let i = 0; i < arreglo.length; i++){
+        let prod = arreglo[i]
+        if(codigo == prod.Codigo){
+            arr.push(prod)
         }
     }
-    const pedidosmatch = JSON.stringify({data : arr})
-    sessionStorage.setItem("PEDIDOSMATCH", pedidosmatch)
-    if(false){
+
+    const data = JSON.stringify({arreglo : arr})
+
+    sessionStorage.setItem("PEDIDOSMATCH" , data)
+
+    if(arr.length==0){
         return <div>
             <TopNav category={5}/>
             <br />
             <h1>Seguimiento del pedido {codigo}</h1>
-            <h2 className="centrar">Este pedido no tiene items pendientes</h2>
+            <h2 className="centrar">Este pedido ha sido terminado o no existe</h2>
         </div>
     }
     else{
         return <div>
-        <TopNav category={5}/>
-        <br />
-        <h1>Seguimiento del pedido {codigo}</h1>
-        <table>
-            <thead><tr>
-                <th><h2>Restaurante</h2></th>
-                <th><h2>Pedido</h2></th>
-                <th><h2>Estado</h2></th>
-                </tr></thead>
-            <tbody>
-                <TablaSeguimiento/>
-            </tbody>
-        </table>
-        <br />
-        <p className="centrar">Recoge tus productos listos con el código <b>123654</b></p>
-    </div>
+            <TopNav category = {5}/>
+            <h1>Seguimiento del pedido {codigo}</h1>
+            <br />
+            <TablaSeguimiento/>
+            <p className="centrar">Recoge tus items listos con el código de confirmación <b>112233</b></p>
+        </div>
     }
 }
 
