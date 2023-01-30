@@ -31,7 +31,7 @@ function ListaPedidos(){
             return (
                 // Añadimos las propiedades a la fila
                
-               <ul class="estiloo"
+               <div className="col"><ul class="estiloo"
                {...row.getRowProps()}>
                  {
                    // Recorremos cada celda de la fila
@@ -51,7 +51,7 @@ function ListaPedidos(){
                      );
                    })
                  }
-               </ul>
+               </ul></div>
                
              );
            })
