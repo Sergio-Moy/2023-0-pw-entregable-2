@@ -5,6 +5,7 @@ export default function useRows() {
    () => [
     {
         id : 1,
+        Restaurante: "Cafeteria F",
         Codigo : 20201166,
         Producto : "Ceviche",
         Precio: 18.5,
@@ -13,6 +14,7 @@ export default function useRows() {
     },
     {
         id : 2,
+        Restaurante: "Cafeteria F",
         Codigo : 20201167,
         Producto : "Bisteck",
         Precio: 21.5,
@@ -21,6 +23,7 @@ export default function useRows() {
     },
     {
         id : 3,
+        Restaurante: "Cafeteria F",
         Codigo : 20201167,
         Producto : "Inca Cola (1.5L)",
         Precio: 6.5,

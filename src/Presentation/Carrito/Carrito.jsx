@@ -4,7 +4,7 @@ import TablaCarrito from './TablaCarrito';
 function Carrito(){
 
     /*DATOS DE PRUEBA*/
-    const p1 = {
+    /*const p1 = {
         Restaurante: "Bembos",
         Producto: "Combo Cheese",
         Precio: 16.5,
@@ -22,7 +22,7 @@ function Carrito(){
         arreglo : [p1, p2]
     })
 
-    sessionStorage.setItem("CARRITO", arr)
+    sessionStorage.setItem("CARRITO", arr)*/
     
     const data = JSON.parse(sessionStorage.getItem("CARRITO"))
 
@@ -33,7 +33,7 @@ function Carrito(){
         <h1>Mi Carrito</h1>
         <h2 className='centrar'>Aún no tienes nada en tu Carrito</h2>
         <br />
-        <a href="/seguimiento" className='centrar'>Seguir mi pedido</a>
+        <a href="/buscar" className='centrar'>Seguir mi pedido</a>
         </div>
     }
     else{
@@ -54,7 +54,7 @@ function Carrito(){
             <TablaCarrito />
     </table>
     <br />
-    <a href="/seguimiento" className='centrar'>Seguir mi pedido</a>
+    <a href="/buscar" className='centrar'>Seguir mi pedido</a>
     </div>
     }
 }

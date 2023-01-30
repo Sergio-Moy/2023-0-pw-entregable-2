@@ -9,6 +9,7 @@ import Recomendaciones from './Presentation/Recomendaciones/Recomendaciones';
 import Seguimiento from './Presentation/Seguimiento/Seguimiento';
 import Pedidos from './Presentation/Pedidos/Pedidos'
 import './Style/style.css';
+import BuscarPedido from './Presentation/Seguimiento/BuscarPedido';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
         <Route path='/micarrito' element={<Carrito/>}/>
         <Route path='/seguimiento' element={<Seguimiento/>}/>
         <Route path='/Pedidos' element={<Pedidos/>}/>
+        <Route path='/buscar' element={<BuscarPedido/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,8 +1,8 @@
-function FilaSeguimiento(){
+function FilaSeguimiento(props){
     return <tr>
-        <td>Bembos</td>
-        <td>Combo Cheese</td>
-        <td>Listo</td>
+        <td>{props.restaurante}</td>
+        <td>{props.producto}</td>
+        <td>{props.estado}</td>
     </tr>
 }
 
