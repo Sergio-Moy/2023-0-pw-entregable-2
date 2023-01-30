@@ -26,7 +26,7 @@ function Seguimiento(props){
         return <div>
             <TopNav category={5}/>
             <br />
-            <h1>Seguimiento del pedido {codigo}</h1>
+            <h1>Error al seguir el pedido {codigo}</h1>
             <h2 className="centrar">Este pedido ha sido terminado o no existe</h2>
         </div>
     }

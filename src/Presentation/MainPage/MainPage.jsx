@@ -1,10 +1,10 @@
 import TopNav from '../Global/TopNav';
-import LogoNeon from '../../Style/img/LogoNeon.png'
+import Logo from '../../Style/img/Logo.png'
 
 function MainPage(){
     return <div>
         <TopNav category={0}/>
-        <img src={LogoNeon} className="centered" style={{width: "15%"}} alt="logo" />
+        <img src={Logo} className="centered" style={{width: "15%"}} alt="logo" />
         <div>
             <h2 className="centrar"><a href="/listadorestaurantes">Listado de Restaurantes</a></h2>
         </div>
