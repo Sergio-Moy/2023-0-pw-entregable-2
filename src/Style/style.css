@@ -451,6 +451,15 @@ a{
 
 }
 
+.estiloo{
+  background: rgb(200, 202, 59);
+  
+  margin-left: 20px;
+  margin-right: 80%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+  color: #e2dfdf;
+}
+
 
 
 
