@@ -4,6 +4,7 @@ import VinetaPedidos from "./Componentes/VinetaPedidos";
 import TopNav from '../Global/TopNav';
 function Pedidos(){
     //ASDF
+    //Asdf
     const [modoVisualizacion, setModoVisualizacion] = useState("tabla")
     const butOnClick = function() {
         if (modoVisualizacion === "tabla") {
