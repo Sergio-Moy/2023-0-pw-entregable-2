@@ -7,7 +7,10 @@ import ListadoRestaurantes from './Presentation/ListadoRestaurantes/ListadoResta
 import MainPage from './Presentation/MainPage/MainPage';
 import Recomendaciones from './Presentation/Recomendaciones/Recomendaciones';
 import Seguimiento from './Presentation/Seguimiento/Seguimiento';
-import Pedidos from './Presentation/Pedidos/Pedidos'
+import Pedidos from './Presentation/Pedidos/Pedidos';
+import Platos from './Presentation/Platos/Platos';
+import NuevaCategoria from './Presentation/Platos/NuevaCategoria';
+import NuevaPlato from './Presentation/Platos/NuevoPlato';
 import './Style/style.css';
 import BuscarPedido from './Presentation/Seguimiento/BuscarPedido';
 
@@ -22,6 +25,9 @@ root.render(
         <Route path='/micarrito' element={<Carrito/>}/>
         <Route path='/seguimiento' element={<Seguimiento/>}/>
         <Route path='/Pedidos' element={<Pedidos/>}/>
+        <Route path='/Platos' element={<Platos/>}/>
+        <Route path='/NuevaCategoria' element={<NuevaCategoria/>}/>
+        <Route path='/NuevoPlato' element={<NuevaPlato/>}/>
         <Route path='/buscar' element={<BuscarPedido/>}/>
       </Routes>
     </BrowserRouter>
