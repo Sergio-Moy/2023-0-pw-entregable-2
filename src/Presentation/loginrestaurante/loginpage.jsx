@@ -24,7 +24,7 @@ function LoginPage() {
             sessionStorage.setItem("DATA_USUARIO", dataUsuarioJSON)
 
 
-            navigate("/MainPage", {
+            navigate("/estados", {
                 state : {
                     username : usuario
                 }
