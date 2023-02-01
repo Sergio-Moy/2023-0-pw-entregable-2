@@ -1,6 +1,6 @@
 function CardPedidos(props){
-    return <div left= "20px">
-    <div>
+    return <div >
+    <div className="estiloo">
         <img src={props.pedi.Imagen} width="300" height="200"/>
     </div>
     <div align="center">

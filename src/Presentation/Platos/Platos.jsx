@@ -7,9 +7,11 @@ function Platos(){
     let listaCategoria =["Bebidas","Pescados y Mariscos","Carnes"]//Nombre de Categorias
     const data = useFilas();
     
-    listaCategoria.forEach(function(lista,index){
+for(let i = 0; i < listaCategoria.length; i++){
+    console.log(listaCategoria[i])
+    listacol = []//Para reiniciar la lista
         data.forEach(function(platos){
-            if(platos.Categoria === lista[index]){//Mi idea es poner una lista de Bebidas, Pescasdos y Canes
+            if(platos.Categoria === listaCategoria[i]){//Mi idea es poner una lista de Bebidas, Pescasdos y Canes
                 listacol.push(
     <div>
                     <div className="itemCarrusel" id={platos.id}>
@@ -21,15 +23,16 @@ function Platos(){
                         <img src={platos.Imagen} width="200" height="150"/>
                         <div className="flechasCarrusel">
                     <a href={platos.Izq}>
-                        <span className="material-symbols-outlined">
-                            first_page
-                            </span>
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
                     </a>
                     <a href={platos.Der}>
-                        <span className="material-symbols-outlined">
-                            last_page
-                            </span>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
                     </a>
+                    
+    
+  
                 </div>
                     </div>
                     </div>
@@ -39,16 +42,16 @@ function Platos(){
                 )
                 
             }
-        })
-        console.log(lista[index])    
+        })  
         listarow.push(
             <div className="contenedorItemsCarrusel">
                 {listacol}
             </div>
             
             )
-    })
+        
     
+}
 
     return <div>
         <TopNav category={3}/>

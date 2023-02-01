@@ -34,17 +34,7 @@ function ListaPedidos() {
         )
     } 
     
-    /*
-    if(data.length % 2 !== 0){
-        listacol = []
-        listacol.push(
-            <div className="col-md-4"><CardPedidos pedi={data[data.length-1]} />
-            </div>
-        )
-        listarow.push(
-            <div className="row">{ listacol }</div>
-        )
-    }*/
+    
     return <div>
         {
             listarow
