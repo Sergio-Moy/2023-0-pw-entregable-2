@@ -7,7 +7,7 @@ import ListadoRestaurantes from './Presentation/ListadoRestaurantes/ListadoResta
 import MainPage from './Presentation/MainPage/MainPage';
 import Recomendaciones from './Presentation/Recomendaciones/Recomendaciones';
 import Logincomensal from './Presentation/logincomensal/logincomensal';
-import Loginrestaurante from './Presentation/loginrestaurante/loginrestaurante';
+import LoginPage from './Presentation/loginrestaurante/loginpage';
 import Seguimiento from './Presentation/Seguimiento/Seguimiento';
 import Pedidos from './Presentation/Pedidos/Pedidos';
 import Platos from './Presentation/Platos/Platos';
@@ -24,7 +24,7 @@ root.render(
         <Route path='/' element={<MainPage/>}/>
         <Route path='/recomendaciones' element={<Recomendaciones/>}/>
         <Route path='/logincomensal' element={<Logincomensal/>}/>
-        <Route path='/loginrestaurante' element={<Loginrestaurante/>}/>
+        <Route path='/Loginpage' element={<LoginPage/>}/>
         <Route path='/listadorestaurantes' element={<ListadoRestaurantes/>}/>
         <Route path='/micarrito' element={<Carrito/>}/>
         <Route path='/seguimiento' element={<Seguimiento/>}/>

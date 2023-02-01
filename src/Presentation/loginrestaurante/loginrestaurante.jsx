@@ -1,12 +1,20 @@
 import TopNav from '../Global/TopNav';
 import React from 'react';
 import LogoNeon from '../../Style/img/Logo.png'
-import usuario from '../../Style/img/2550260.png'
-
-function Loginrestaurante(){
+import logousuario from '../../Style/img/2550260.png'
+import contraseña from '../../Style/img/483408.png'
+import { useState } from "react"
+function Loginrestaurante(props){
+    const [usuario, setUsuario] = useState("")
+    const [password, setPassword] = useState("")
+    const butOnClick = function() {
+      console.log("USuario:", usuario)
+      console.log("Password:", password)
+      props.onLoginOk(usuario, password)
+  }
     return (
         <div>
-            <TopNav category ={3}/>
+            
             <div className="centrar">
           <div
             className="bg-white p-5 rounded-5 text-secondary shadow"
@@ -18,35 +26,45 @@ function Loginrestaurante(){
               </div>
               <div className="text-center fs-1 fw-bold">Login</div>
               <div className="input-group mt-4">
-                <div className="input-group-text bg-info">
+                <div className="input-group-text bg-info" style={{height: "25 px"}}>
                   <img
-                    src={usuario}
+                    src={logousuario}
                     alt="username-icon"
-                    style={{ height: "1rem" }}
+                    style={{ height: "1.7rem" }}
                   />
                 </div>
                 <input
                   className="form-control bg-light"
                   type="text"
                   placeholder="Usuario"
+                  value={usuario}
+                  onChange={function(evt){setUsuario(evt.target.value)}}
+                  
                 />
 
               </div>
               <div className="input-group mt-4">
-                <div className="input-group-text bg-info">
+                <div className="input-group-text bg-info" style={{height: "25%"}}>
                   <img
-                    src={usuario}
+                    src={contraseña}
                     alt="username-icon"
-                    style={{ height: "1rem" }}
+                    style={{ height: "1.7rem" }}
                   />
                 </div>
                 <input
                   className="form-control bg-light"
                   type="text"
                   placeholder="Contraseña"
+                  value={password}
+                  onChange={ function(evt) { setPassword(evt.target.value) } }
                 />
-                    
-              </div>
+                 <div class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm"
+                 onClick={butOnClick}>
+            Iniciar sesion
+          </div>    
+             
+          
+        </div>
             </div>
           </div>
         </div>
