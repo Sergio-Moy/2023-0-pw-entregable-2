@@ -6,16 +6,13 @@ import Carrito from './Presentation/Carrito/Carrito';
 import ListadoRestaurantes from './Presentation/ListadoRestaurantes/ListadoRestaurantes';
 import MainPage from './Presentation/MainPage/MainPage';
 import Recomendaciones from './Presentation/Recomendaciones/Recomendaciones';
-<<<<<<< HEAD
 import Logincomensal from './Presentation/logincomensal/logincomensal';
 import Loginrestaurante from './Presentation/loginrestaurante/loginrestaurante';
-=======
 import Seguimiento from './Presentation/Seguimiento/Seguimiento';
 import Pedidos from './Presentation/Pedidos/Pedidos';
 import Platos from './Presentation/Platos/Platos';
 import NuevaCategoria from './Presentation/Platos/NuevaCategoria';
 import NuevaPlato from './Presentation/Platos/NuevoPlato';
->>>>>>> 6e56a56c2ec699df97267d99c4e335325f4fc49d
 import './Style/style.css';
 import BuscarPedido from './Presentation/Seguimiento/BuscarPedido';
 

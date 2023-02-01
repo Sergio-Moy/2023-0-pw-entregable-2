@@ -1,6 +1,7 @@
 import TopNav from '../Global/TopNav';
 import React from 'react';
 import LogoNeon from '../../Style/img/LogoNeon.png'
+import usuario from '../../Style/img/2550260.png'
 
 function Loginrestaurante(){
     return (
@@ -19,7 +20,7 @@ function Loginrestaurante(){
               <div className="input-group mt-4">
                 <div className="input-group-text bg-info">
                   <img
-                    src="/imagenes/415461.png "
+                    src={usuario}
                     alt="username-icon"
                     style={{ height: "1rem" }}
                   />
