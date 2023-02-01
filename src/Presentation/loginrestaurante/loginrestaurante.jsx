@@ -1,6 +1,6 @@
 import TopNav from '../Global/TopNav';
 import React from 'react';
-import LogoNeon from '../../Style/img/LogoNeon.png'
+import LogoNeon from '../../Style/img/Logo.png'
 import usuario from '../../Style/img/2550260.png'
 
 function Loginrestaurante(){
@@ -30,8 +30,23 @@ function Loginrestaurante(){
                   type="text"
                   placeholder="Usuario"
                 />
+
               </div>
-              {/* ... Otros elementos aquí */}
+              <div className="input-group mt-4">
+                <div className="input-group-text bg-info">
+                  <img
+                    src={usuario}
+                    alt="username-icon"
+                    style={{ height: "1rem" }}
+                  />
+                </div>
+                <input
+                  className="form-control bg-light"
+                  type="text"
+                  placeholder="Contraseña"
+                />
+                    
+              </div>
             </div>
           </div>
         </div>
