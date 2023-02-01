@@ -400,7 +400,7 @@ flechasCarrusel
   dentro de este.*/
 
 .contenedorItemsCarrusel{
-  height: 350px;/*Para fijar el tamaño del contenedor*/
+  height: 300px;/*Para fijar el tamaño del contenedor: Si esta desentrado "regular" aqui*/
   overflow: hidden;
   margin:0;
   padding: 0;
@@ -450,9 +450,17 @@ a{
   padding: 0.5%;
 
 }
+<<<<<<< HEAD
 #contenedorlogin{
   padding-top: 100px;
 }
+=======
+
+.estiloo{
+  padding-left: 5%;
+}
+
+>>>>>>> 6e56a56c2ec699df97267d99c4e335325f4fc49d
 
 
 

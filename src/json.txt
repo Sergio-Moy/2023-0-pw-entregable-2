@@ -1,0 +1,36 @@
+#1 Carrito
+
+El JSON es un arreglo [] de objetos js
+
+const CARRITO = {
+    arreglo : []
+}
+
+Se guarda en Session Storage con el key CARRITO
+los objetos tendran el siguiente formato:
+
+obj { 
+    Restaurante: string
+    Producto: string
+    Precio: float
+    Cantidad: int
+}
+
+#2 Pedido
+
+El JSON es un arreglo [] de objetos js
+
+const PEDIDO = {
+    arreglo : []
+}
+
+Se guarda en Session Storage con el key PEDIDO
+los objetos tendran el siguiente formato:
+
+obj {
+    Codigo: string
+    Producto: string
+    Precio: float
+    Cantidad: int
+    Estado: string
+}
