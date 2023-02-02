@@ -24,7 +24,7 @@ function LoginPage() {
             sessionStorage.setItem("DATA_USUARIO", dataUsuarioJSON)
 
 
-            navigate("/2023-0-pw-entregable-2/estados", {
+            navigate("/2023-0-pw-entregable-2/pedidos", {
                 state : {
                     username : usuario
                 }

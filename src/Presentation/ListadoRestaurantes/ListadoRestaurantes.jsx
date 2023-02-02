@@ -4,6 +4,7 @@ import FoodTrucks from './FoodTrucks';
 import Platos from './Platos';
 import Snacks from './Snacks';
 import Tiendas from './Tiendas';
+import {Link} from 'react-router-dom'
 
 function ListadoRestaurantes(){
     const myStyle = {
@@ -33,8 +34,13 @@ function ListadoRestaurantes(){
                 <h2>Snacks</h2>
                 <Snacks myStyle={myStyle}/>
             </div>
-            <div className='col' style={{margin : "0.5%"}}>
-
+            <div className='col centrar' style={{margin : "0.5%"}}>
+            <h2>Acciones de comensal</h2>
+            <Link to="/2023-0-pw-entregable-2/agregarcarrito" style={{margin : "1%"}}>Agregar un plato al carrito</Link>
+            <br />
+            <Link to="/2023-0-pw-entregable-2/categorias" style={{margin : "1%"}}>Ver categorías de platos</Link>
+            <br />
+            <Link to="/2023-0-pw-entregable-2/ofertas" style={{margin : "1%"}}>Ver Ofertas</Link>
             </div>
             <div className='col' style={{margin : "0.5%"}}>
                 <h2>Tiendas</h2>
