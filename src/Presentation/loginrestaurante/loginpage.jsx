@@ -24,7 +24,7 @@ function LoginPage() {
             sessionStorage.setItem("DATA_USUARIO", dataUsuarioJSON)
 
 
-            navigate("/estados", {
+            navigate("/2023-0-pw-entregable-2/estados", {
                 state : {
                     username : usuario
                 }
@@ -47,4 +47,4 @@ function LoginPage() {
     
 }
 
-export default LoginPage
+export default LoginPage;
