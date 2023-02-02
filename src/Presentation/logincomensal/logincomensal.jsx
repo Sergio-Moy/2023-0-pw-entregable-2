@@ -13,7 +13,7 @@ function Logincomensal(props){
 
     return <form>
       <div
-            className="bg-primary p-5 rounded-5 text-secondary shadow fs-0 fw-bold"
+            className="bg-muted p-5 rounded-5 text-secondary shadow fs-0 fw-bold"
             style={{ width: "25rem", borderRadius: "2px" }}
           >
       <img src={LogoNeon} className="centered" style={{width: "50%"}} alt="logo" />
@@ -35,7 +35,8 @@ function Logincomensal(props){
           setPassword(evt.target.value)
         }}/>
        </div>
-<button type="submit" className="btn btn-sucess mt-4 w-100 fw-semibold shadow-sm" butOnClick={butOnClick}>Login</button>
+       <div className="centrar"><button type="submit" className="btn btn-light mt-4 w-10 fw-semibold shadow-sm" butOnClick={butOnClick}>Login</button></div>
+
 </div>
 </div>
        </form> 

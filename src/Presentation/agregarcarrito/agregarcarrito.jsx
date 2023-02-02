@@ -8,19 +8,20 @@ const RestaurantCard = ({ restaurant, onAddOrder }) => {
   };
 
   return (
-    <div>
-      <h3>{restaurant.name}</h3>
-      <ul>
-        {restaurant.dishes.map(dish => (
-          <li key={dish.id}>
-            {dish.name}
-            <button onClick={() => addToCart(dish)}>
-              Agregar al carrito
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <div className="centrar"><div>
+    <h3>{restaurant.name}</h3>
+    <ul>
+      {restaurant.dishes.map(dish => (
+        <li key={dish.id}>
+          {dish.name}
+          <button onClick={() => addToCart(dish)}>
+            Agregar al carrito
+          </button>
+        </li>
+      ))}
+    </ul>
+  </div></div>
+    
   );
 };
 
