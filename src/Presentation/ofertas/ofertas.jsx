@@ -5,7 +5,7 @@ import chifa from '../../Style/img/chifa.png';
 import TopNav from '../Global/TopNav';
 
 const RestaurantCard = ({ restaurant }) => (
-  <div className="card">
+  <div className="card2">
     <br></br>
     <img src={restaurant.img} alt={restaurant.name} />
     <h3>{restaurant.name}</h3>
