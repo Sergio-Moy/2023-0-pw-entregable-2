@@ -7,7 +7,7 @@ function Elemento(props){
     }
     else{
         /*return <a href={props.enlace} className="col">{props.texto}</a>*/
-        return <Link to={props.enlace} className="col">{props.texto}</Link>
+        return <Link to={props.enlace}  className="col">{props.texto}</Link>
     }
 }
 
