@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TopNav from '../Global/TopNav';
 
 const Category = ({ category, onSelect }) => (
   <button onClick={() => onSelect(category.id)}>{category.name}</button>
@@ -74,11 +75,18 @@ const Categoria = () => {
   ];
 
   return (
+
     <div className="centrar">
+
+    <div>
+        <TopNav category ={3}/>
+        <div className="centrar">
+
       {restaurants.map(restaurant => (
 <Restaurant key={restaurant.id} restaurant={restaurant} />
 ))}
 </div>
+    </div>
 );
 };
 

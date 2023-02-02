@@ -1,4 +1,5 @@
 import React from "react";
+import TopNav from '../Global/TopNav';
 
 const RestaurantCard = ({ restaurant }) => (
   <div>
@@ -41,13 +42,23 @@ const Ofertas = () => {
     }
   ];
 
-  return (
+return (
+
     <div className="centrar">
+
+    <div>
+        <TopNav category ={3}/>
+        <div className="centrar">
+        
+
       {restaurants.map(restaurant => (
         <RestaurantCard key={restaurant.id} restaurant={restaurant} />
       ))}
     </div>
-  );
+
+
+    </div>
+    );
 };
 
 export default Ofertas;

@@ -21,6 +21,8 @@ import Registrarentrega from './Presentation/registrarentrega/registrarentrega';
 import Menu from './Presentation/agregarcarrito/agregarcarrito';
 import Ofertas from './Presentation/ofertas/ofertas';
 import Categoria from './Presentation/categorias/categorias';
+import Agregarcarrito from './Presentation/agregarcarrito/agregarcarrito';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -44,6 +46,7 @@ root.render(
         <Route path='/2023-0-pw-entregable-2/NuevoPlato' element={<NuevaPlato/>}/>
         <Route path='/2023-0-pw-entregable-2/buscar' element={<BuscarPedido/>}/>
         <Route path='/2023-0-pw-entregable-2/estados' element={<Estados/>}/>
+        <Route path='/2023-0-pw-entregable-2/agregarcarrito' element={<Agregarcarrito/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
