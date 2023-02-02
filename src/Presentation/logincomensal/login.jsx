@@ -12,7 +12,7 @@ import { useNavigate } from  "react-router-dom"
 
             const dataUsuarioJSON = JSON.stringify(dataUsuario)
             sessionStorage.setItem("DATA_USUARIO", dataUsuarioJSON)
-            navigate("/Recomendaciones", {
+            navigate("/2023-0-pw-entregable-2/listadorestaurantes", {
                 state :{ username : usuario}
             })
         }

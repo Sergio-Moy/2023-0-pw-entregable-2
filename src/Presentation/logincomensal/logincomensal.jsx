@@ -1,5 +1,6 @@
 import { useState }from "react"
 import TopNav from '../Global/TopNav'
+import LogoNeon from '../../Style/img/Logo.png'
 import React from 'react';
 import {Link} from "react-router-dom"
 
@@ -11,7 +12,13 @@ function Logincomensal(props){
   }
 
     return <form>
-       <div>
+      <div
+            className="bg-primary p-5 rounded-5 text-secondary shadow fs-0 fw-bold"
+            style={{ width: "25rem", borderRadius: "2px" }}
+          >
+      <img src={LogoNeon} className="centered" style={{width: "50%"}} alt="logo" />
+       <div id= "contenedor centrado">
+       <div> 
         <label className = "form-label">Usuario: </label>
         <input type = "text" className="form-control"
         value ={usuario}
@@ -28,9 +35,12 @@ function Logincomensal(props){
           setPassword(evt.target.value)
         }}/>
        </div>
-<button type="submit" className="btn btn-sucess mt-3" butOnClick={butOnClick}>Login</button>
+<button type="submit" className="btn btn-sucess mt-4 w-100 fw-semibold shadow-sm" butOnClick={butOnClick}>Login</button>
+</div>
+</div>
        </form> 
   
+
       }  
      
     

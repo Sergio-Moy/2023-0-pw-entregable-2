@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import TopNav from '../Global/TopNav';
 
 const RestaurantCard = ({ restaurant, onAddOrder }) => {
   const addToCart = dish => {
@@ -46,7 +45,6 @@ const OrderTable = ({ orders, onClearOrders }) => (
 );
 
 const App = () => {
-const Agregarcarrito = () => {
   const [restaurants, setRestaurants] = useState([
     {
       id: 1,
@@ -65,7 +63,17 @@ const Agregarcarrito = () => {
         { id: 5, name: "Jugo de manzana" },
         { id: 6, name: "Jugo de frutas del bosque" }
       ]
+    },
+    {
+      id: 3,
+      name: "Chifa Express",
+      dishes: [
+        { id: 4, name: "Combo 1: Porción de chaufa personal " },
+        { id: 5, name: "Combo de Alistas Express" },
+        { id: 6, name: "Combo Combinado" }
+      ]
     }
+
   ]);
 
   const [orders, setOrders] = useState([]);
@@ -79,21 +87,14 @@ const Agregarcarrito = () => {
   };
 
   return (
-    <div>
-
-        <TopNav category ={3}/>
-
         <div>
       {restaurants.map(restaurant => (
         <RestaurantCard key={restaurant.id} restaurant={restaurant} onAddOrder={addOrder} />
       ))}
       <OrderTable orders={orders} onClearOrders={clearOrders} />
     </div>
-    </div>
-
   );
 };
 
 
 export default App;
-export default Agregarcarrito;
