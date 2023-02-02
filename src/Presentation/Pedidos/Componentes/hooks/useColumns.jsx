@@ -22,6 +22,10 @@ export default function useColumns() {
      {
         Header: "Estado",
         accessor: "Estado"
+      },
+      {
+        Header: "Total",
+        accessor: "Total"
       }
    ],
    []

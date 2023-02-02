@@ -11,7 +11,8 @@ export default function useRows() {
         Precio: 18.5,
         Cantidad: 1,
         Estado: "Enviando al Cliente",
-        Imagen: "https://micevichedehoy.com/wp-content/uploads/2018/12/ceviche-de-pescado_700x465-700x465.jpg"
+        Imagen: "https://micevichedehoy.com/wp-content/uploads/2018/12/ceviche-de-pescado_700x465-700x465.jpg",
+        Total:18.5
     },
     {
         id : 2,
@@ -21,7 +22,8 @@ export default function useRows() {
         Precio: 21.5,
         Cantidad: 1,
         Estado: "Enviando al Cliente",
-        Imagen: "https://1.bp.blogspot.com/-4THw7fRcvBs/Wl6V87BAf2I/AAAAAAAAAEk/Tqh1sOnKZPANDwOO3-zyfGO-ImgU4lBBQCLcBGAs/s1600/Bistek%2Ba%2Bla%2BParrilla.jpg"
+        Imagen: "https://1.bp.blogspot.com/-4THw7fRcvBs/Wl6V87BAf2I/AAAAAAAAAEk/Tqh1sOnKZPANDwOO3-zyfGO-ImgU4lBBQCLcBGAs/s1600/Bistek%2Ba%2Bla%2BParrilla.jpg",
+        Total:21.5
     },
     {
         id : 3,
@@ -31,7 +33,8 @@ export default function useRows() {
         Precio: 6.5,
         Cantidad: 2,
         Estado: "Enviando al Cliente",
-        Imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-73bW05hAU7jQDiqAgHB70rh2TGOYSW8Gvw&usqp=CAU"
+        Imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-73bW05hAU7jQDiqAgHB70rh2TGOYSW8Gvw&usqp=CAU",
+        Total:13
     },
     {
         id : 4,
@@ -41,7 +44,8 @@ export default function useRows() {
         Precio: 4.5,
         Cantidad: 2,
         Estado: "Enviando al Cliente",
-        Imagen: "https://polleriaslagranja.com/wp-content/uploads/2022/10/La-Granja-Real-Food-Chicken-Cusquena.png"
+        Imagen: "https://polleriaslagranja.com/wp-content/uploads/2022/10/La-Granja-Real-Food-Chicken-Cusquena.png",
+        Total:9
     }
      
    ],
