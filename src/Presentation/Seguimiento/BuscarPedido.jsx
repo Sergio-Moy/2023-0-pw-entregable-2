@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import TopNav from "../Global/TopNav"
 import BuscarForm from "./BuscarForm"
@@ -37,7 +36,7 @@ function BuscarPedido(){
     const navigate = useNavigate()
 
     const SeguimientoOk = function(){
-        navigate("/seguimiento")
+        navigate("/2023-0-pw-entregable-2/seguimiento")
     }
 
     return <div>

@@ -77,7 +77,7 @@ export default function InfoPlatos() {
         id : 8,
         Restaurante: "Cafeteria F",
         Categoria: "Carnes",
-        Producto : "Bisteck (papas, ensalada y arroz))",
+        Producto : "Bisteck (papas, ensalada y arroz)",
         Precio: 27.50,
         Imagen:"https://1.bp.blogspot.com/-4THw7fRcvBs/Wl6V87BAf2I/AAAAAAAAAEk/Tqh1sOnKZPANDwOO3-zyfGO-ImgU4lBBQCLcBGAs/s1600/Bistek%2Ba%2Bla%2BParrilla.jpg",
         Izq: "#7",

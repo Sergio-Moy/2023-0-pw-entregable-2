@@ -1,5 +1,6 @@
 import TopNav from '../Global/TopNav';
 import useFilas from "./Componentes/InfoPlatos";
+import {Link} from "react-router-dom"
 function NuevaCategoria(){
     const listarow = []//Lista de filas
     let listacol = []//Lista de columnas
@@ -13,9 +14,11 @@ for(let i = 0; i < listaCategoria.length; i++){
             if(platos.Categoria === listaCategoria[i]){//Mi idea es poner una lista de Bebidas, Pescasdos y Canes
                 listacol.push(
     <div>
+        <br/>
                     <div className="itemCarrusel" id={platos.id}>
                     <div className="tarjetaCarrusel">
                         <h2 className="clase_1"> {platos.Categoria} </h2>
+                        <div className="cuadro">
                         <p className="clase_2">{platos.Producto}</p>
                         <p className="clase_3">{platos.Precio}</p>
                         <div className="alinear_der">
@@ -29,7 +32,7 @@ for(let i = 0; i < listaCategoria.length; i++){
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
                     </a>
-                    
+                    </div>
     
   
                 </div>
@@ -67,7 +70,7 @@ for(let i = 0; i < listaCategoria.length; i++){
     <h1>Registrar un nuevo plato</h1>
     <br/>
     <div className="clase_0">
-    <a href="/NuevoPlato">Agregar Plato</a>
+    <Link to="/2023-0-pw-entregable-2/NuevoPlato">Agregar Plato</Link>
     </div>
     <br/>
     <h1>Platos a la Carta</h1>
