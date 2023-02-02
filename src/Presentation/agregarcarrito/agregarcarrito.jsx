@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import TopNav from '../Global/TopNav';
+
 
 const RestaurantCard = ({ restaurant, onAddOrder }) => {
   const addToCart = dish => {
@@ -86,14 +88,15 @@ const App = () => {
     setOrders([]);
   };
 
-  return (
+  return <div>
+    <TopNav category/>
         <div>
       {restaurants.map(restaurant => (
         <RestaurantCard key={restaurant.id} restaurant={restaurant} onAddOrder={addOrder} />
       ))}
       <OrderTable orders={orders} onClearOrders={clearOrders} />
     </div>
-  );
+    </div>
 };
 
 
