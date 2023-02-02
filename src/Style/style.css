@@ -173,18 +173,21 @@ Indice:
 clase_0: hipervinculos
 clase_1: h2, clase_2 y 3: p
 */
-
+.clase_1, .clase_2{
+  left: 10%;
+  position: relative;
+}
+.clase_1{
+  color:#9c2241;
+  font-weight: bold;
+}
 .clase_2{
     font-size: 25px;
     font-family: 'Raleway';
-    color: rgb(108, 230, 134);/*color de texto*/
+    color: rgb(221, 200, 81);/*color de texto*/
     text-shadow: 1px 1px 1px black;/*Sombra al texto*/
 }
-h2{
-    font-size: 30px;
-    color: rgb(241, 168, 84);/*color de texto*/
-    text-shadow: 1px 1px 1px black;/*Sombra al texto*/
-}
+
 .clase_3{
     font-size: 25px;
     font-family: Raleway
@@ -202,6 +205,11 @@ h2{
     text-align: right;
     padding-right: 10%;
         
+}
+.cuadro{
+  border-top-width:3px;
+  border-top-style: dashed;
+  border-top-color:rgb(36, 134, 158);
 }
 
 /* Poner una imagen como fondo de pantalla*/
