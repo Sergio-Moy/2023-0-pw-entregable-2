@@ -1,5 +1,6 @@
 import TopNav from '../Global/TopNav';
 import useFilas from "./Componentes/InfoPlatos";
+import {Link} from "react-router-dom"
 
 function Platos(){
     const listarow = []//Lista de filas
@@ -61,7 +62,7 @@ for(let i = 0; i < listaCategoria.length; i++){
         <h1>Registrar una nueva categoria</h1>
         <br/>
         <div class="clase_0">
-    <a  href="/NuevaCategoria">Agregar Categoria</a>
+    <Link  to="/2023-0-pw-entregable-2/NuevaCategoria">Agregar Categoria</Link>
     </div>
     <br/>
     <h1>Platos a la Carta</h1>

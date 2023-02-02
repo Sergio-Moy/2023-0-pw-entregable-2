@@ -1,6 +1,6 @@
 import TopNav from '../Global/TopNav';
 import React from 'react';
-
+import {Link} from "react-router-dom";
 
 function Logincomensal(){
     return <div>
@@ -16,7 +16,7 @@ function Logincomensal(){
               <br />
               <input type="password" placeholder="Contraseña" name="password" id="password" />
               <br />
-              <a className="ok-account">¿Ya tienes una cuenta?</a>
+              <Link to="" className="ok-account">¿Ya tienes una cuenta?</Link>
               <br />
               <input type="submit" value="Registrarse" />
             </form>
@@ -29,7 +29,7 @@ function Logincomensal(){
               <br />
               <input type="password" placeholder="Contraseña" id="password2" />
               <br />
-              <a className="no-account">¿Aun no tienes cuenta?</a>
+              <Link to="" className="no-account">¿Aun no tienes cuenta?</Link>
               <br />
               <input type="submit" value="Iniciar Sesión" />
             </form>

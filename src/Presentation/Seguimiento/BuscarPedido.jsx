@@ -37,7 +37,7 @@ function BuscarPedido(){
     const navigate = useNavigate()
 
     const SeguimientoOk = function(){
-        navigate("/seguimiento")
+        navigate("/2023-0-pw-entregable-2/seguimiento")
     }
 
     return <div>

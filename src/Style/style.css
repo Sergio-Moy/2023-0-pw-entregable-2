@@ -319,7 +319,7 @@ HEAD
   box-sizing: border-box;
 }
 
-.topnav a {
+.topnav Link {
   background-color: #3c268b;
   color: #ffffff;
   text-align: center;
@@ -329,7 +329,7 @@ HEAD
   width: 100%;
 }
 
-.topnav a:hover {
+.topnav Link:hover {
   background-color: #f20fb6;
   color: #ffffff;
   text-decoration: none;
@@ -339,7 +339,7 @@ HEAD
   background-color: #00000000;
 }
 
-.topnav a:active {
+.topnav Link:active {
   background-color: #f29828;
   color: #ffffff
 }

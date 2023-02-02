@@ -23,21 +23,21 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<MainPage/>}/>
-        <Route path='/recomendaciones' element={<Recomendaciones/>}/>
-        <Route path='/logincomensal' element={<Logincomensal/>}/>
-        <Route path='/Loginpage' element={<LoginPage/>}/>
-        <Route path='/listadorestaurantes' element={<ListadoRestaurantes/>}/>
-        <Route path='/micarrito' element={<Carrito/>}/>
-        <Route path='/seguimiento' element={<Seguimiento/>}/>
-        <Route path='/pedidoregistro' element={<Pedidoregistro/>}/>
-        <Route path='/registrarentrega' element={<Registrarentrega/>}/>
-        <Route path='/Pedidos' element={<Pedidos/>}/>
-        <Route path='/Platos' element={<Platos/>}/>
-        <Route path='/NuevaCategoria' element={<NuevaCategoria/>}/>
-        <Route path='/NuevoPlato' element={<NuevaPlato/>}/>
-        <Route path='/buscar' element={<BuscarPedido/>}/>
-        <Route path='/estados' element={<Estados/>}/>
+        <Route path='/2023-0-pw-entregable-2/' element={<MainPage/>}/>
+        <Route path='/2023-0-pw-entregable-2/recomendaciones' element={<Recomendaciones/>}/>
+        <Route path='/2023-0-pw-entregable-2/logincomensal' element={<Logincomensal/>}/>
+        <Route path='/2023-0-pw-entregable-2/Loginpage' element={<LoginPage/>}/>
+        <Route path='/2023-0-pw-entregable-2/listadorestaurantes' element={<ListadoRestaurantes/>}/>
+        <Route path='/2023-0-pw-entregable-2/micarrito' element={<Carrito/>}/>
+        <Route path='/2023-0-pw-entregable-2/seguimiento' element={<Seguimiento/>}/>
+        <Route path='/2023-0-pw-entregable-2/pedidoregistro' element={<Pedidoregistro/>}/>
+        <Route path='/2023-0-pw-entregable-2/registrarentrega' element={<Registrarentrega/>}/>
+        <Route path='/2023-0-pw-entregable-2/Pedidos' element={<Pedidos/>}/>
+        <Route path='/2023-0-pw-entregable-2/Platos' element={<Platos/>}/>
+        <Route path='/2023-0-pw-entregable-2/NuevaCategoria' element={<NuevaCategoria/>}/>
+        <Route path='/2023-0-pw-entregable-2/NuevoPlato' element={<NuevaPlato/>}/>
+        <Route path='/2023-0-pw-entregable-2/buscar' element={<BuscarPedido/>}/>
+        <Route path='/2023-0-pw-entregable-2/estados' element={<Estados/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

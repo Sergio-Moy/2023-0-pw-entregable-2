@@ -1,5 +1,6 @@
 import TopNav from '../Global/TopNav';
 import TablaCarrito from './TablaCarrito';
+import { Link } from "react-router-dom"
 
 function Carrito(){
 
@@ -33,7 +34,7 @@ function Carrito(){
         <h1>Mi Carrito</h1>
         <h2 className='centrar'>Aún no tienes nada en tu Carrito</h2>
         <br />
-        <a href="/buscar" className='centrar'>Seguir mi pedido</a>
+        <Link to="/2023-0-pw-entregable-2/buscar" className='centrar'>Seguir mi pedido</Link>
         </div>
     }
     else{
@@ -54,7 +55,7 @@ function Carrito(){
             <TablaCarrito />
     </table>
     <br />
-    <a href="/buscar" className='centrar'>Seguir mi pedido</a>
+    <Link to="/2023-0-pw-entregable-2/buscar" className='centrar'>Seguir mi pedido</Link>
     </div>
     }
 }
