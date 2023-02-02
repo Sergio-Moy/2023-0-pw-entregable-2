@@ -76,4 +76,4 @@ function Loginrestaurante(props){
      
     
 
-export default Loginrestaurante
+export default Loginrestaurante;

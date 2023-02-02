@@ -12,7 +12,7 @@ function Elemento(props){
 }
 
 function TopNav(props){
-    const enlaces = ["/2023-0-pw-entregable-2/", "/2023-0-pw-entregable-2/listadorestaurantes", "/2023-0-pw-entregable-2/logincomensal", "/2023-0-pw-entregable-2/loginpage", "/2023-0-pw-entregable-2/recomendaciones", "/2023-0-pw-entregable-2/micarrito"]
+    const enlaces = ["/2023-0-pw-entregable-2/", "/2023-0-pw-entregable-2/listadorestaurantes", "/2023-0-pw-entregable-2/login", "/2023-0-pw-entregable-2/loginpage", "/2023-0-pw-entregable-2/recomendaciones", "/2023-0-pw-entregable-2/micarrito"]
     const textos = ["Inicio", "Listado de Restaurantes", "Cuenta de Comensal", "Cuenta de Restaurante", "Recomendaciones", "Carrito"]
     const barra = []
 

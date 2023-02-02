@@ -1,83 +1,105 @@
 import React, { useState } from 'react';
+import TopNav from '../Global/TopNav';
+const Pedidoregistro = () => {
+  const [order, setOrder] = useState({
+    name: '',
+    address: '',
+    date: '',
+    dish: ''
+  });
+  const [orders, setOrders] = useState([]);
 
-const products = [
-  { id: 1, name: 'Producto 1', price: 100 },
-  { id: 2, name: 'Producto 2', price: 200 },
-  { id: 3, name: 'Producto 3', price: 300 },
-];
+  const handleInputChange = event => {
+    setOrder({ ...order, [event.target.name]: event.target.value });
+  };
 
-function Pedidoregistro({ onSubmit }) {
-  const [selectedProductId, setSelectedProductId] = useState(null);
-  const [quantity, setQuantity] = useState(1);
-  const [address, setAddress] = useState('');
-  const [deliveryDate, setDeliveryDate] = useState('');
-
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
-    if (!selectedProductId) {
-      return;
-    }
-
-    const selectedProduct = products.find(
-      (product) => product.id === selectedProductId
-    );
-
-    onSubmit({
-      product: selectedProduct,
-      quantity,
-      address,
-      deliveryDate,
-    });
+    setOrders([...orders, order]);
+    setOrder({ name: '', address: '', date: '', dish: '' });
+  };
+  const onClearOrders = () => {
+    setOrders([]);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="product">Producto:</label>
-        <select
-          id="product"
-          value={selectedProductId || ''}
-          onChange={(event) =>
-            setSelectedProductId(Number(event.target.value))
-          }
-        >
-          <option value="">Seleccione un producto</option>
-          {products.map((product) => (
-            <option key={product.id} value={product.id}>
-              {product.name}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="quantity">Cantidad:</label>
-        <input
-          type="number"
-          id="quantity"
-          value={quantity}
-          onChange={(event) => setQuantity(Number(event.target.value))}
-        />
-      </div>
-      <div>
-        <label htmlFor="address">Dirección de entrega:</label>
-        <input
-          type="text"
-          id="address"
-          value={address}
-          onChange={(event) => setAddress(event.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="deliveryDate">Fecha de entrega:</label>
-        <input
-          type="date"
-          id="deliveryDate"
-          value={deliveryDate}
-          onChange={(event) => setDeliveryDate(event.target.value)}
-        />
-      </div>
-      <button type="submit">Realizar pedido</button>
-    </form>
+    <div>
+      <TopNav category ={3}/>
+      <div className='centrar'>
+    <form onSubmit={handleSubmit} style={{paddingTop:'30px'}}>
+      <div className='form-group'><input
+      type="text"
+      name="name"
+      value={order.name}
+      onChange={handleInputChange}
+      placeholder="Nombre"
+    /></div>
+    <div className='form-group'>
+    <input
+      type="text"
+      name="address"
+      value={order.address}
+      onChange={handleInputChange}
+      placeholder="Dirección"
+    />
+    </div>
+    <div className='form-group'>
+    <input
+      type="date"
+      name="date"
+      value={order.date}
+      onChange={handleInputChange}
+      placeholder="Date"
+    />
+    </div>
+    
+    <select
+      name="dish"
+      value={order.dish}
+      onChange={handleInputChange}
+    >
+      <option value="">Selecciona un plato</option>
+      <option value="Pizza">Pizza</option>
+      <option value="Pasta">Pasta</option>
+      <option value="Salad">Salad</option>
+    </select>
+    <button type="submit">Realizar pedido</button>
+    
+  </form>
+  
+  </div>
+  <OrderTable orders={orders} />
+    <button onClick={onClearOrders}>Limpiar carrito</button>
+    </div>
+    
+    
+    
   );
-}
+};
+
+const OrderTable = ({ orders }) => (
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Día</th>
+        <th>Plato</th>
+      </tr>
+    </thead>
+    <tbody>
+      {orders.map((order, index) => (
+        <tr key={index}>
+          <td>{order.name}</td>
+          <td>{order.address}</td>
+          <td>{order.date}</td>
+          <td>{order.dish}</td>
+        </tr>
+      ))}
+    </tbody>
+    
+  </table>
+  
+);
+
 export default Pedidoregistro;
