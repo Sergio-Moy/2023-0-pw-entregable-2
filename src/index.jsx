@@ -16,6 +16,8 @@ import NuevaPlato from './Presentation/Platos/NuevoPlato';
 import './Style/style.css';
 import BuscarPedido from './Presentation/Seguimiento/BuscarPedido';
 import Estados from './Presentation/estados/estados';
+import Pedidoregistro from './Presentation/Registrarpedido/pedidoregistro';
+import Registrarentrega from './Presentation/registrarentrega/registrarentrega';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -28,6 +30,8 @@ root.render(
         <Route path='/listadorestaurantes' element={<ListadoRestaurantes/>}/>
         <Route path='/micarrito' element={<Carrito/>}/>
         <Route path='/seguimiento' element={<Seguimiento/>}/>
+        <Route path='/pedidoregistro' element={<Pedidoregistro/>}/>
+        <Route path='/registrarentrega' element={<Registrarentrega/>}/>
         <Route path='/Pedidos' element={<Pedidos/>}/>
         <Route path='/Platos' element={<Platos/>}/>
         <Route path='/NuevaCategoria' element={<NuevaCategoria/>}/>
