@@ -1,23 +1,44 @@
-import bembos from '../../Style/img/icons/bembos.webp'
-import chifa from '../../Style/img/icons/chifa.png'
-import sushi from '../../Style/img/icons/sushi.webp'
-import nevera from '../../Style/img/icons/nevera.png'
+import { useEffect, useState } from 'react'
 
 function Platos(props){
+
+    const [listaPlatos, setListaPlatos] = useState([])
+
+    const obtenerPlatos = async function(){
+        try{
+            const response = await fetch("http://localhost:8000/backend/listado?categoria=3")
+            const data = await response.json()
+            setListaPlatos(data.restaurantes)
+        }
+        catch(error){
+            console.error("Hubo un error obteniendo los restaurantes")
+        }
+    }
+
+    useEffect(function(){
+        obtenerPlatos()
+    },[])
+
+    let tabla = []
+    for (let i = 0; i< listaPlatos.length; i++){
+        let Plato = listaPlatos[i]
+        let fila
+        if(Plato.estado == 1){
+            fila = <tr><td>
+            {Plato.nombre} <img src={Plato.imagen} alt="icon" style={props.myStyle}/>
+        </td></tr>
+        }
+        else{
+            fila = <tr><td className='closed'>
+            {Plato.nombre} <img src={Plato.imagen} alt="icon" style={props.myStyle}/>
+        </td></tr>
+        }
+        tabla.push(fila)
+    }
+
     return <table>
     <tbody>
-        <tr><td>
-            Bembos <img src={bembos} alt="icon" style={props.myStyle}/>
-        </td></tr>
-        <tr><td className="closed">
-            Chifa Express <img src={chifa} alt="icon" style={props.myStyle}/>
-        </td></tr>
-        <tr><td className="closed">
-            Mr. Sushi <img src={sushi} alt="icon" style={props.myStyle}/>
-        </td></tr>
-        <tr><td>
-            Nevera Fit <img src={nevera} alt="icon" style={props.myStyle}/>
-        </td></tr>
+        {tabla}
     </tbody>
 </table>
 }

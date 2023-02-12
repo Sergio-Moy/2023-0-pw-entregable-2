@@ -1,24 +1,44 @@
-import donuts from '../../Style/img/icons/donuts.png'
-import gogreen from '../../Style/img/icons/gogreen.png'
-import momenti from '../../Style/img/icons/momenti.webp'
-import starbucks from '../../Style/img/icons/starbucks.png'
-
+import { useEffect, useState } from 'react'
 
 function Snacks(props){
+
+    const [listaSnacks, setListaSnacks] = useState([])
+
+    const obtenerSnacks = async function(){
+        try{
+            const response = await fetch("http://localhost:8000/backend/listado?categoria=4")
+            const data = await response.json()
+            setListaSnacks(data.restaurantes)
+        }
+        catch(error){
+            console.error("Hubo un error obteniendo los restaurantes")
+        }
+    }
+
+    useEffect(function(){
+        obtenerSnacks()
+    },[])
+
+    let tabla = []
+    for (let i = 0; i< listaSnacks.length; i++){
+        let Snacks = listaSnacks[i]
+        let fila
+        if(Snacks.estado == 1){
+            fila = <tr><td>
+            {Snacks.nombre} <img src={Snacks.imagen} alt="icon" style={props.myStyle}/>
+        </td></tr>
+        }
+        else{
+            fila = <tr><td className='closed'>
+            {Snacks.nombre} <img src={Snacks.imagen} alt="icon" style={props.myStyle}/>
+        </td></tr>
+        }
+        tabla.push(fila)
+    }
+
     return <table>
     <tbody>
-        <tr><td>
-            Dunkin' Donuts <img src={donuts} alt="icon" style={props.myStyle}/>
-        </td></tr>
-        <tr><td>
-            GoGreen <img src={gogreen} alt="icon" style={props.myStyle}/>
-        </td></tr>
-        <tr><td>
-            Momenti <img src={momenti} alt="icon" style={props.myStyle}/>
-        </td></tr>
-        <tr><td className="closed">
-            Starbucks <img src={starbucks} alt="icon" style={props.myStyle}/>
-        </td></tr>
+        {tabla}
     </tbody>
 </table>
 }
