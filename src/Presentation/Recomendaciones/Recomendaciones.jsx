@@ -1,50 +1,48 @@
 import TopNav from '../Global/TopNav';
-import burger from '../../Style/img/burger.png';
-import sushi from '../../Style/img/sushi.png';
-import lomo from '../../Style/img/lomo.png';
-import coffee from '../../Style/img/coffee.png';
-import chifa from '../../Style/img/chifa.png';
+import { useEffect, useState } from 'react';
+
 
 function Recomendaciones(){
     const myStyle = {
         margin : "2.5%",
         height : "250px"
     }
+
+    const [listaRecomendaciones, setListaRecomendaciones] = useState([])
+
+    const obtenerRecomendaciones = async function(){
+        try{
+            const response = await fetch("http://localhost:8000/backend/recomendaciones")
+            const data = await response.json()
+            setListaRecomendaciones(data.recomendaciones)
+        }
+        catch(error){
+            console.error("Hubo un error obteniendo las recomendaciones")
+        }
+    }
+
+    useEffect(function(){
+        obtenerRecomendaciones()
+    }, [])
+
+    let carrusel = []
+    for(let i = 0; i < listaRecomendaciones.length; i++){
+        let articulo = listaRecomendaciones[i]
+        let elemento = <article className='card'>
+                <img src={articulo.imagen} alt="imagen" style={myStyle}/>
+                <p style={{textAlign: "center"}}>{articulo.texto}</p>
+            <button type='button' className='btn btn-outline-light'>¡Lo quiero!</button>
+            <br />
+            </article>
+        carrusel.push(elemento)
+    }
+
     return <div>
         <TopNav category ={4}/>
         <br />
         <h1>Recomendaciones</h1>
         <div className='carrousel'>
-            <article className='card'>
-                <img src={burger} alt="combo_bembos" style={myStyle}/>
-                <p style={{textAlign: "center"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, unde accusamus, hic iure odit provident quidem, adipisci officia soluta in laborum eos assumenda iusto quod. Perferendis dolore adipisci nemo ipsam.
-            </p>
-            <button type='button' className='btn btn-outline-light'>¡Lo quiero!</button>
-            </article>
-            <article className='card'>
-                <img src={sushi} alt="combo_sushi" style={myStyle}/>
-                <p style={{textAlign: "center"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, unde accusamus, hic iure odit provident quidem, adipisci officia soluta in laborum eos assumenda iusto quod. Perferendis dolore adipisci nemo ipsam.
-            </p>
-            <button type='button' className='btn btn-outline-light'>¡Lo quiero!</button>
-            </article>
-            <article className='card'>
-                <img src={lomo} alt="lomo_saltado" style={myStyle}/>
-                <p style={{textAlign: "center"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, unde accusamus, hic iure odit provident quidem, adipisci officia soluta in laborum eos assumenda iusto quod. Perferendis dolore adipisci nemo ipsam.
-            </p>
-            <button type='button' className='btn btn-outline-light'>¡Lo quiero!</button>
-            </article>
-            <article className='card'>
-                <img src={coffee} alt="combo_starbucks" style={myStyle}/>
-                <p style={{textAlign: "center"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, unde accusamus, hic iure odit provident quidem, adipisci officia soluta in laborum eos assumenda iusto quod. Perferendis dolore adipisci nemo ipsam.
-            </p>
-            <button type='button' className='btn btn-outline-light'>¡Lo quiero!</button>
-            </article>
-            <article className='card'>
-                <img src={chifa} alt="combo_chifa" style={myStyle}/>
-                <p style={{textAlign: "center"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, unde accusamus, hic iure odit provident quidem, adipisci officia soluta in laborum eos assumenda iusto quod. Perferendis dolore adipisci nemo ipsam.
-            </p>
-            <button type='button' className='btn btn-outline-light'>¡Lo quiero!</button>
-            </article>
+            {carrusel}
         </div>
     </div>
 }
