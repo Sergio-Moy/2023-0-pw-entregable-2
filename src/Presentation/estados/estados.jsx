@@ -40,7 +40,7 @@ const Estados = () => {
     {
       id: 1,
       detalles: 'Hamburguesa con queso',
-      status: 'pendiente',
+      status: 'preparado',
     },
     {
       id: 2,
@@ -50,13 +50,14 @@ const Estados = () => {
     {
       id: 3,
       detalles: 'Ensalada César',
-      status: 'pendiente',
+      status: 'preparado',
     },
   ];
 
   return (
     <div>
         <TopNav category ={3}/>
+        <br />
         <div className="centrar" style={{width:"100%"}}>
         <div style={{width:"100%"}}><table >
         <tr>
