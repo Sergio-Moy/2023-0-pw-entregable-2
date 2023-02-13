@@ -12,13 +12,6 @@ const Pedido = ({ pedido }) => {
   };
 
   return (
-    <div style={{width:"100%"}}><table >
-        <tr>
-            <th><h3>ID</h3></th>
-            <th><h3>DESCRIPCIÓN</h3></th>
-            <th><h3>Estado</h3></th>
-            <th><h3>Botón Acción</h3></th>
-        </tr>
         <tr>
 
             <td>{pedido.id}</td>
@@ -39,8 +32,6 @@ const Pedido = ({ pedido }) => {
       </div></td>
       
         </tr>
-    </table>
-    </div>
   );
 };
 
@@ -67,10 +58,18 @@ const Estados = () => {
     <div>
         <TopNav category ={3}/>
         <div className="centrar" style={{width:"100%"}}>
-        
+        <div style={{width:"100%"}}><table >
+        <tr>
+            <th><h3>ID</h3></th>
+            <th><h3>DESCRIPCIÓN</h3></th>
+            <th><h3>Estado</h3></th>
+            <th><h3>Botón Acción</h3></th>
+        </tr>
       {pedidos.map((pedido) => (
         <Pedido key={pedido.id} pedido={pedido} />
       ))}
+      </table>
+    </div>
     </div>
     </div>
     
