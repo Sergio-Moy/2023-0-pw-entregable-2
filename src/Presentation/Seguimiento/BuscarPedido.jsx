@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import TopNav from "../Global/TopNav"
 import BuscarForm from "./BuscarForm"
-
+import { useEffect, useState } from "react"
 
 function BuscarPedido(){
     /*DATOS DE PRUEBA - HASTA LINEA 35*/
@@ -27,9 +27,50 @@ function BuscarPedido(){
         Estado: "Listo"
     }
 
+    const listarow = []//Lista de filas
+    //let listaCategoria =["Bebidas","Pescados y Mariscos","Carnes"]//Nombre de Categorias
+    const [listaPeliculas, setListaPeliculas] = useState([])
+    //Obtener lista de peliculas filtradas por categoria
+
+    const filtrarPelicula = async function (codigoId) {
+        try {
+            const response = await fetch(
+                `http://localhost:8000/backend/ObtenerPedidos_8/listar?codigo=${codigoId}`
+                )
+            const data = await response.json()
+            if(data.error===""){
+                setListaPeliculas(data.pedidos)
+            }else{
+                console.error(data.error)
+            }
+        }catch(error) {
+            console.error("Error de comunicacion")
+        }
+    }
+    useEffect(function() {
+        filtrarPelicula(-1)
+    }, [])
+    //Caso 1:
+    console.log("hola")
+    console.log(listaPeliculas)
+    
     const arr = JSON.stringify({
-        arreglo : [p1, p2, p3]
+        arreglo : [listaPeliculas]
     })
+
+    console.log("Adios")
+    console.log(arr)
+
+    //Caso 2:
+    console.log("WWWW")
+    console.log([p1,p2,p3])
+    
+    const arr3 = JSON.stringify({
+        arreglo : [p1,p2,p3]
+    })
+
+    console.log("XXXX")
+    console.log(arr3)
 
     sessionStorage.setItem("PEDIDOS", arr)
 

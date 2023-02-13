@@ -10,9 +10,12 @@ function Seguimiento(props){
     const js = sessionStorage.getItem("PEDIDOS")
     const parsed = JSON.parse(js)
     const arreglo = parsed.arreglo
-
-    for(let i = 0; i < arreglo.length; i++){
-        let prod = arreglo[i]
+    console.log("hola")
+    console.log(arreglo)
+    for(let i = 0; i < arreglo[0].length; i++){
+        let prod = arreglo[0][i]
+        console.log("adios")
+        console.log(prod)
         if(codigo == prod.Codigo){
             arr.push(prod)
         }

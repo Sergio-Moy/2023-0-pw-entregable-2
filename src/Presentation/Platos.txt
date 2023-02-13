@@ -1,0 +1,111 @@
+import TopNav from '../Global/TopNav';
+import { useEffect, useState } from "react"
+import {Link} from "react-router-dom"
+
+
+function Platos(){
+    console.log("hola")
+    
+    const [listaPeliculas, setListaPeliculas] = useState([])
+    const listarow = []//Lista de filas
+    let listacol = []//Lista de columnas
+
+    const filtrarPelicula = async function (codigoId, cod) {
+        try {
+            const response = await fetch(
+                `http://localhost:8000//backend/platos_10/listar?categoria=${codigoId}&restaurante=${cod}`
+                )
+            const data = await response.json()
+            if(data.error===""){
+                setListaPeliculas(data.platos_10)
+            }else{
+                console.error(data.error)
+            }
+        }catch(error) {
+            console.error("Error de comunicacion")
+        }
+    }
+    useEffect(function() {
+        filtrarPelicula(-1,-1)
+    }, [])
+    console.log(listaPeliculas)
+    var obj = listaPeliculas
+    obj.forEach(function(value){
+        listarow.push(
+            <div>{value.Producto}</div>
+                
+            )
+    })
+    listarow.push(
+        <div>
+            { listacol }
+        </div>
+    )
+   
+    return <div>
+    <TopNav category={3}/>
+        <br/>
+        <h1>Registrar una nueva categoria</h1>
+        <br/>
+        <div class="clase_0">
+    <Link  to="/2023-0-pw-entregable-2/NuevaCategoria">Agregar Categoria</Link>
+    </div> 
+    <br/>
+    <h1>Platos a la Carta</h1>
+    <br/>
+    <div>
+    {listarow}
+    </div>
+    
+    
+    </div>
+}
+export default Platos
+
+    ###
+    {
+                "id": 1,
+                "Restaurante": "Punto y Sabor",
+                "Categoria": "Bebidas",
+                "Producto" : "Limonada Frozen (1.5L)",
+                "Cantidad" : 3,
+                "Precio": 18.5,
+                "Cliente": 2020,
+                "Codigo" : 51,
+                "Estado" : "Preparacion",
+                "Registrado" : "Si"
+            }, {
+                "id": 2,
+                "Restaurante": "Punto y Sabor",
+                "Categoria": "Bebidas",
+                "Producto" : "Cusqueña (310 ml)",
+                "Cantidad" : 2,
+                "Precio": 4.5,
+                "Cliente": 2020,
+                "Codigo" : 52,
+                "Estado" : "Preparacion",
+                "Registrado" : "Si"
+            }, {
+                "id": 3,
+                "Restaurante": "Corralito",
+                "Categoria": "Bebidas",
+                "Producto" : "Inca Cola (1.5L)",
+                "Cantidad" : 2,
+                "Precio": 6.5,
+                "Cliente": 1166,
+                "Codigo" : 53,
+                "Estado" : "Confirmacion",
+                "Registrado" : "Si"
+            },
+            {
+                "id" : 4,
+                "Restaurante": "Corralito",
+                "Categoria": "Carnes",
+                "Producto" : "Bisteck (papas, ensalada y arroz)",
+                "Cantidad" : 1,
+                "Precio": 27.50,
+                "Cliente": 1166,
+                "Codigo" : 54,
+                "Estado" : "Confirmacion",
+                "Registrado" : "Si"
+            }
