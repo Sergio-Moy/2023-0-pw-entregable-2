@@ -52,13 +52,9 @@ const Login = () => {
 />
       <label>Password</label>
     </div>
-    <a onClick={handleSubmit}>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </a>
+    <button onClick={handleSubmit}>
+  <span className="text">Button</span>
+</button>
   </form>
   <p>Don't have an account? <a href="" className="a2">Sign up!</a></p>
         </form>
