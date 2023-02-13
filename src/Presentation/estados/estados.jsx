@@ -1,80 +1,82 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TopNav from '../Global/TopNav';
+
 const Pedido = ({ pedido }) => {
   const [status, setStatus] = useState(pedido.status);
 
   const handlePreparadoClick = () => {
-    setStatus('preparado');
+    setStatus(1);
   };
 
   const handleTerminadoClick = () => {
-    setStatus('terminado');
+    setStatus(2);
   };
+
+  const estados = ["Pendiente", "En preparacion", "Terminado"]
 
   return (
         <tr>
 
             <td>{pedido.id}</td>
             <td>{pedido.detalles}</td>
-            <td>{pedido.status}</td>
+            <td>{estados[pedido.status]}</td>
             <td><div>
-        {status === 'pendiente' && (
+        {status === 0 && (
           <>
             <button onClick={handlePreparadoClick}>Preparado</button>
             <button onClick={handleTerminadoClick}>Terminado</button>
           </>
         )}
-        {status === 'preparado' && (
-            pedido.status='preparado',
+        {status === 1 && (
+            pedido.status=1,
           <button onClick={handleTerminadoClick}>Terminado</button>
         )}
-        {status === 'terminado' && (pedido.status='terminado',<div>Pedido Terminado</div>)}
+        {status === 2 && (pedido.status=2,<div>Pedido Terminado</div>)}
       </div></td>
       
         </tr>
   );
 };
 
-const Estados = () => {
-  const pedidos = [
-    {
-      id: 1,
-      detalles: 'Hamburguesa con queso',
-      status: 'preparado',
-    },
-    {
-      id: 2,
-      detalles: 'Pizza pepperoni',
-      status: 'pendiente',
-    },
-    {
-      id: 3,
-      detalles: 'Ensalada César',
-      status: 'preparado',
-    },
-  ];
+function Estados(){
+  const [listaPedidos, setListaPedidos] = useState([])
 
-  return (
-    <div>
-        <TopNav category ={3}/>
-        <br />
-        <div className="centrar" style={{width:"100%"}}>
-        <div style={{width:"100%"}}><table >
+  const obtenerPedidos = async function(){
+      try{
+          const response = await fetch("http://localhost:8000/backend/cambiarestado")
+          const data = await response.json()
+          setListaPedidos(data.arreglo)
+      }
+      catch(error){
+          console.error("Hubo un error obteniendo los pedidos")
+      }
+  }
+
+  useEffect(function(){
+      obtenerPedidos()
+  }, [])
+
+  let filas = []
+  for(let i = 0; i < listaPedidos.length; i++){
+      let pedido = listaPedidos[i]
+      let elemento = <Pedido key={pedido.id} pedido={pedido} />
+      filas.push(elemento)
+  }
+
+  return <div>
+      <TopNav category ={4}/>
+      <br />
+      <h1>Pedidos</h1>
+      <table>
         <tr>
-            <th><h3>ID</h3></th>
-            <th><h3>DESCRIPCIÓN</h3></th>
-            <th><h3>Estado</h3></th>
-            <th><h3>Botón Acción</h3></th>
+          <th><h3>ID</h3></th>
+          <th><h3>Descripción</h3></th>
+          <th><h3>Estado</h3></th>
+          <th><h3>Botón</h3></th>
         </tr>
-      {pedidos.map((pedido) => (
-        <Pedido key={pedido.id} pedido={pedido} />
-      ))}
+        {filas}
       </table>
-    </div>
-    </div>
-    </div>
-    
-  );
-};
+  </div>
+}
 
 export default Estados;
