@@ -1,82 +1,59 @@
-import React, { useState } from 'react';
+import TopNav from "../Global/TopNav"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const productDetails = [
-  { code: '1', description: 'Hamburguesa de queso', address: 'Los Olivos' },
-  { code: '2', description: 'Pizza Hawaiana', address: 'Santiago de surco' },
-  { code: '3', description: 'Makis', address: 'Pueblo Libre' },
-];
 
-function Registrarentrega({ onSubmit }) {
+function Registrarentrega(){
+  const [pedido, setPedido] = useState("")
+  const [error, setError] = useState("")
+  const FormRegistrar = function(){
     const [code, setCode] = useState('');
-    const [deliveryDetails, setDeliveryDetails] = useState({});
-    const [deliveries, setDeliveries] = useState([]);
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      const product = productDetails.find(
-        (product) => product.code === code
-      );
-  
-      if (!product) {
-        return;
+    const handleSubmit = async function(event){
+      const response = await fetch(`http://localhost:8000/backend/registrarentrega?code=${code}`)
+      const data = await response.json()
+      if (data.error ==="") {
+        setPedido(data.producto)
       }
-  
-      if (deliveries.find((delivery) => delivery.code === code)) {
-        return alert(`El producto con código ${code} ya ha sido entregado.`);
+      else{
+        setError(data.error)
       }
-  
-      setDeliveries([
-        ...deliveries,
-        {
-          code,
-          deliveryDetails,
-          description: product.description,
-          address: product.address,
-        },
-      ]);
-      onSubmit({ code, deliveryDetails });
-    };
-  
-    const handleClear = () => {
-      setDeliveries([]);
-    };
-  
-    return (
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="code">Código de verificación:</label>
-            <input
-              type="text"
-              id="code"
-              value={code}
-              onChange={(event) => setCode(event.target.value)}
-            />
-          </div>
-          {/* Otros campos para los detalles de la entrega */}
-          <button type="submit">Registrar entrega</button>
-        </form>
-        <table>
-          <thead>
-            <tr>
-              <th>Código</th>
-              <th>Descripción</th>
-              <th>Dirección</th>
-            </tr>
-          </thead>
-          <tbody>
-            {deliveries.map((delivery, index) => (
-              <tr key={index}>
-                <td>{delivery.code}</td>
-                <td>{delivery.description}</td>
-                <td>{delivery.address}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <button onClick={handleClear}>Limpiar tabla</button>
-      </div>
-    );
+    }
+     
+    return <form>
+      <label>Código de pedido</label>
+      <input type="text" id="code" value={code} onChange={(event) => setCode(event.target.value)}/>
+      <button type="button" onClick={handleSubmit}>Buscar Pedido</button>
+    </form>
   }
+  const Tabla = function(){
+    if (error === "") {
+      if (pedido!== "") {
+        return <table>
+        <tr>
+          <th>Código</th>
+          <th>Detalle</th>
+          <th>Código de verificación</th>
+        </tr>
+        <tr>
+          <th>{pedido.code}</th>
+          <th>{pedido.desc}</th>
+          <th>{pedido.code_v}</th>
+          <th><button type="submit">Confirmar entrega</button></th>
+        </tr>
+      </table>
+    }
+    }
+    else {
+      return <h2>{error}</h2>
+    }
+  }
+  return <div>
+    <TopNav category={3}/>
+    <br />
+    <h1>Registrar una entrega</h1>
+    <FormRegistrar/>
+    <Tabla/>
+  </div>
+}
 
-export default Registrarentrega;
+export default Registrarentrega
