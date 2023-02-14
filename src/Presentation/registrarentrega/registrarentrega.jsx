@@ -34,6 +34,7 @@ function Registrarentrega(){
   const vacio = function(){
     console.log('Se hizo click')
     setPedido('')
+    setError('')
     return <div>holla</div>
   }
   const Tabla = function(){
