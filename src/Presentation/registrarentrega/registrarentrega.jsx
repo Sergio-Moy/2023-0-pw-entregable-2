@@ -26,6 +26,15 @@ function Registrarentrega(){
       <button type="button" onClick={handleSubmit}>Buscar Pedido</button>
     </form>
   }
+  const Vaciar = function(){
+    return <table>
+    <tr>
+      <th>Código</th>
+      <th>Detalle</th>
+      <th>Código de verificación</th>
+    </tr>
+    </table>
+  }
   const Tabla = function(){
     if (error === "") {
       if (pedido!== "") {
@@ -39,10 +48,10 @@ function Registrarentrega(){
           <th>{pedido.code}</th>
           <th>{pedido.desc}</th>
           <th>{pedido.code_v}</th>
-          <th><button type="submit">Confirmar entrega</button></th>
+          <th><button type="submit" onClick={Vaciar}>Confirmar entrega</button></th>
         </tr>
       </table>
-    }
+      }
     }
     else {
       return <h2>{error}</h2>
