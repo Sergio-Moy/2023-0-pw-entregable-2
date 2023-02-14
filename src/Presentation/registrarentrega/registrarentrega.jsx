@@ -12,6 +12,7 @@ function Registrarentrega(){
       const response = await fetch(`http://localhost:8000/backend/registrarentrega?code=${code}`)
       const data = await response.json()
       if (data.error ==="") {
+        setError(data.error)
         setPedido(data.producto)
       }
       else{
