@@ -21,8 +21,16 @@ const Login = () => {
         })
       });
       const data = await response.json();
-      const jsonData = JSON.stringify(data.restaurante);
-      sessionStorage.setItem('data', jsonData);
+      console.log(data)
+      if(data.error===""){
+        const jsonData = JSON.stringify(data.restaurante);
+        sessionStorage.setItem('data', jsonData);
+        window.location.href = '/2023-0-pw-entregable-2/bienvenida';
+      }
+      else{
+        setError("Sus credednciales son incorrectas")
+      }
+      
       // redirigir al usuario a la página principal
     } catch (err) {
       console.log("no ingreso")
@@ -56,6 +64,7 @@ const Login = () => {
 </button>
   </form>
   <p>Don't have an account? <a href="" className="a2">Sign up!</a></p>
+  <p>{error}</p>
         </form>
   
 </div>
