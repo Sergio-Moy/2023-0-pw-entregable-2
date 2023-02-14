@@ -8,7 +8,8 @@ function TablaSeguimiento(){
 
    for(let i = 0; i<arreglo.length; i++){
         let data = arreglo[i]
-        tabla.push( <FilaSeguimiento restaurante = {data.Restaurante} producto = {data.Producto} estado = {data.Estado}/>)
+        console.log("SOMOS",data)
+        tabla.push( <FilaSeguimiento restaurante = {data.restaurante.nombre} producto = {data.producto} estado = {data.estado}/>)
    }
 
     return <table>
