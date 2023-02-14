@@ -3,7 +3,7 @@ import TopNav from '../Global/TopNav';
 
 const Pedido = ({ pedido }) => {
   const [status, setStatus] = useState(pedido.status);
-
+  
   const handlePreparadoClick = () => {
     setStatus(1);
   };

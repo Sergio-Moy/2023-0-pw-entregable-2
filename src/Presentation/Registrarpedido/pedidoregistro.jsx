@@ -71,9 +71,7 @@ const Pedidoregistro = () => {
   <OrderTable orders={orders} />
     <button onClick={onClearOrders}>Limpiar carrito</button>
     </div>
-    
-    
-    
+
   );
 };
 
