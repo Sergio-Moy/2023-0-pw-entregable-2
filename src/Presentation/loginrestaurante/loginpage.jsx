@@ -21,9 +21,8 @@ const Login = () => {
         })
       });
       const data = await response.json();
-      console.log(data)
-      setImagen(data.restaurante.imagen)
-      
+      const jsonData = JSON.stringify(data.restaurante);
+      sessionStorage.setItem('data', jsonData);
       // redirigir al usuario a la página principal
     } catch (err) {
       console.log("no ingreso")

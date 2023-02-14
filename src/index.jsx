@@ -22,7 +22,7 @@ import Menu from './Presentation/agregarcarrito/agregarcarrito';
 import Ofertas from './Presentation/ofertas/ofertas';
 import Categoria from './Presentation/categorias/categorias';
 import Agregarcarrito from './Presentation/agregarcarrito/agregarcarrito';
-
+import Bienvenida from './Presentation/loginrestaurante/bienvenida'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -47,6 +47,7 @@ root.render(
         <Route path='/2023-0-pw-entregable-2/buscar' element={<BuscarPedido/>}/>
         <Route path='/2023-0-pw-entregable-2/estados' element={<Estados/>}/>
         <Route path='/2023-0-pw-entregable-2/agregarcarrito' element={<Agregarcarrito/>}/>
+        <Route path='/2023-0-pw-entregable-2/bienvenida' element={<Bienvenida/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
