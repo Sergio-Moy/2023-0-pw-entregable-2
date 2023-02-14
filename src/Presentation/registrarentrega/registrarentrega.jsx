@@ -9,7 +9,12 @@ function Registrarentrega(){
   const FormRegistrar = function(){
     const [code, setCode] = useState('');
     const handleSubmit = async function(event){
-      const response = await fetch(`http://localhost:8000/backend/registrarentrega?code=${code}`)
+      const body = {
+        code : code
+      }
+      const response = await fetch('http://localhost:8000/backend/registrarentrega', {method : "POST",
+      body : JSON.stringify(body)})
+
       const data = await response.json()
       if (data.error ==="") {
         setError(data.error)
@@ -26,14 +31,10 @@ function Registrarentrega(){
       <button type="button" onClick={handleSubmit}>Buscar Pedido</button>
     </form>
   }
-  const Vaciar = function(){
-    return <table>
-    <tr>
-      <th>Código</th>
-      <th>Detalle</th>
-      <th>Código de verificación</th>
-    </tr>
-    </table>
+  const vacio = function(){
+    console.log('Se hizo click')
+    setPedido('')
+    return <div>holla</div>
   }
   const Tabla = function(){
     if (error === "") {
@@ -48,7 +49,7 @@ function Registrarentrega(){
           <th>{pedido.code}</th>
           <th>{pedido.desc}</th>
           <th>{pedido.code_v}</th>
-          <th><button type="submit" onClick={Vaciar}>Confirmar entrega</button></th>
+          <th><button type="submit" onClick={vacio}>Confirmar entrega</button></th>
         </tr>
       </table>
       }
