@@ -1,15 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import TopNav from '../Global/TopNav';
 
+let cambios = ""
+if (sessionStorage["CAMBIOS"]) {
+  let obj = JSON.parse(sessionStorage.getItem("CAMBIOS"))
+  let arr = obj.arreglo
+  cambios = arr
+}
+
 const Pedido = ({ pedido }) => {
   const [status, setStatus] = useState(pedido.status);
   
   const handlePreparadoClick = () => {
     setStatus(1);
+    let id = pedido.id - 1
+    cambios[id]  = 1
+    let obj = JSON.stringify({arreglo : cambios})
+    sessionStorage.setItem("CAMBIOS", obj)
   };
 
   const handleTerminadoClick = () => {
     setStatus(2);
+    let id = pedido.id - 1
+    cambios[id]  = 1
+    let obj = JSON.stringify({arreglo : cambios})
+    sessionStorage.setItem("CAMBIOS", obj)
   };
 
   const estados = ["Pendiente", "En preparacion", "Terminado"]
@@ -39,11 +54,21 @@ const Pedido = ({ pedido }) => {
 };
 
 function Estados(){
+  if(cambios === ""){
+    cambios = [0, 0, 0, 0]}
+  let cuerpo =  {
+    1 : cambios[0],
+    2 : cambios[1],
+    3 : cambios[2],
+    4 : cambios[3],
+  }
   const [listaPedidos, setListaPedidos] = useState([])
-
   const obtenerPedidos = async function(){
       try{
-          const response = await fetch("http://localhost:8000/backend/cambiarestado")
+          const response = await fetch("http://localhost:8000/backend/cambiarestado", {
+            method : "POST",
+            body : JSON.stringify(cuerpo)
+          })
           const data = await response.json()
           setListaPedidos(data.arreglo)
       }
@@ -64,7 +89,7 @@ function Estados(){
   }
 
   return <div>
-      <TopNav category ={4}/>
+      <TopNav category ={3}/>
       <br />
       <h1>Pedidos</h1>
       <table>
