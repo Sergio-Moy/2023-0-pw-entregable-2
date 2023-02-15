@@ -23,10 +23,18 @@ function ListadoRestaurantes(){
     useEffect(function(){ObtenerRestaurantes()}, [])
     for (let i = 0; i < listaRestaurantes.length; i++){
         let rest = listaRestaurantes[i]
-        let elemento = <div className='col-md-3'>
+        let elemento
+        if (rest.estado === 1) {
+            elemento = <div className='col-md-3'>
             <img src={rest.imagen} alt={rest.nombre} style={{width: "40%"}}/>
             {rest.nombre}
         </div>
+        } else {
+            elemento = <div className='closed col-md-3'>
+            <img src={rest.imagen} alt={rest.nombre} style={{width: "40%"}}/>
+            {rest.nombre}
+        </div> 
+        }
         content.push(elemento)
     }
     return <div className='row'>
