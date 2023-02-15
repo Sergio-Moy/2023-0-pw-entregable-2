@@ -1,33 +1,36 @@
-import React from "react";
-import burger from '../../Style/img/burger.png';
-import lomo from '../../Style/img/lomo.png';
-import chifa from '../../Style/img/chifa.png';
-import TopNav from '../Global/TopNav';
+import React, { useEffect, useState } from "react";
+import burger from "../../Style/img/burger.png";
+import lomo from "../../Style/img/lomo.png";
+import chifa from "../../Style/img/chifa.png";
+import TopNav from "../Global/TopNav";
 
-const RestaurantCard = ({ restaurant }) => (
+const RestaurantCard = ({ data }) => (
   <div className="card2">
     <br></br>
-    <img src={restaurant.img} alt={restaurant.name} />
-    <h3>{restaurant.name}</h3>
-    {restaurant.offers.length > 0 ? (
-      <ul>
-        {restaurant.offers.map(offer => (
-          <li key={offer.id}>{offer.description}</li>
-        ))}
-      </ul>
-    ) : (
-  
-      <p>Platos a la carta: 
-        <p>- Lomos saltado
-           A solo s/. 15 soles</p>
-      </p>
-    )}
-        <button type='button' className='btn btn-outline-light'>¡Lo quiero!</button>
-
+    <img src={data.imagen} alt={data.nombre} />
+    <h3>{data.nombre}</h3>
+    <p>{data.descripción}</p>
+    <p>Precio: {data.precio} soles.</p>
+    <button type="button" className="btn btn-outline-light">
+      ¡Lo quiero!
+    </button>
   </div>
-  
 );
 const Ofertas = () => {
+  const [ofertasDatos, setOfertasDatos] = useState({});
+
+  useEffect(() => {
+    const getData = async () => {
+      const rawResponse = await fetch("http://localhost:8000/backend/ofertas");
+      await rawResponse.json().then((data) => {
+        setOfertasDatos(data);
+        console.log(data);
+      });
+    };
+
+    getData();
+  }, []);
+
   const restaurants = [
     {
       id: 1,
@@ -35,14 +38,14 @@ const Ofertas = () => {
       img: burger,
       offers: [
         { id: 1, description: "20% de descuento en los martes" },
-        { id: 2, description: "Combo familia a $30" }
-      ]
+        { id: 2, description: "Combo familia a $30" },
+      ],
     },
     {
       id: 2,
       name: "CAFETERIA O",
       img: lomo,
-      offers: []
+      offers: [],
     },
     {
       id: 3,
@@ -50,19 +53,33 @@ const Ofertas = () => {
       img: chifa,
       offers: [
         { id: 3, description: "Rolls a mitad de precio los jueves" },
-        { id: 4, description: "Oferta de bienvenida: 10% de descuento en su primer pedido" }
-      ]
-    }
+        {
+          id: 4,
+          description:
+            "Oferta de bienvenida: 10% de descuento en su primer pedido",
+        },
+      ],
+    },
   ];
 
-  return <div>
-     <TopNav category/>
-    <div className="catalogo">
-      {restaurants.map(restaurant => (
-        <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-      ))}
+  return (
+    <div>
+      <TopNav category />
+      <div className="catalogo">
+        {ofertasDatos.ofertas == null ? (
+          <div>No hay ofertas.</div>
+        ) : (
+          ofertasDatos.ofertas.map((oferta) => {
+            return <RestaurantCard data={oferta} />;
+            return <div>{oferta.nombre}</div>;
+          })
+        )}
+        {/* {restaurants.map((restaurant) => (
+          <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+        ))} */}
+      </div>
     </div>
-  </div>
+  );
 };
 
 export default Ofertas;
