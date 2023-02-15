@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TopNav from '../Global/TopNav';
 import './logincliente.css'
+
 const Login = () => {
   const [codigo, setEmail] = useState('');
   const [password, setPassword] = useState('');
