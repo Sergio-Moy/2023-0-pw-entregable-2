@@ -62,7 +62,7 @@ const Login = () => {
 />
       <label>Password</label>
     </div>
-    <button onClick={handleSubmit}>
+    <button className='buttonloginrestaurant' onClick={handleSubmit}>
   <span className="text">Button</span>
 </button>
   </form>
