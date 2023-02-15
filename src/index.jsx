@@ -12,7 +12,7 @@ import Seguimiento from './Presentation/Seguimiento/Seguimiento';
 import Pedidos from './Presentation/Pedidos/Pedidos';
 import Platos from './Presentation/Platos/Platos';
 import NuevaCategoria from './Presentation/Platos/NuevaCategoria';
-import NuevaPlato from './Presentation/Platos/NuevoPlato';
+import NuevaPlato from './Presentation/loginrestaurante/registrarplato';
 import './Style/style.css';
 import BuscarPedido from './Presentation/Seguimiento/BuscarPedido';
 import Estados from './Presentation/estados/estados';
@@ -22,7 +22,8 @@ import Menu from './Presentation/agregarcarrito/agregarcarrito';
 import Ofertas from './Presentation/ofertas/ofertas';
 import Categoria from './Presentation/categorias/nuevacategoria';
 import Agregarcarrito from './Presentation/agregarcarrito/agregarcarrito';
-import Bienvenida from './Presentation/loginrestaurante/bienvenida'
+import Bienvenida from './Presentation/loginrestaurante/bienvenida';
+import Registrocategoria from './Presentation/loginrestaurante/registrarcategoria'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -48,6 +49,7 @@ root.render(
         <Route path='/2023-0-pw-entregable-2/estados' element={<Estados/>}/>
         <Route path='/2023-0-pw-entregable-2/agregarcarrito' element={<Agregarcarrito/>}/>
         <Route path='/2023-0-pw-entregable-2/bienvenida' element={<Bienvenida/>}/>
+        <Route path='/2023-0-pw-entregable-2/registrarcategoria' element={<Registrocategoria/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
