@@ -173,29 +173,32 @@ Indice:
 clase_0: hipervinculos
 clase_1: h2, clase_2 y 3: p
 */
-.clase_1, .clase_2{
+.clase_1{
   left: 10%;
   position: relative;
 }
 .clase_1{
   color:#9c2241;
   font-weight: bold;
+  
 }
 .clase_2{
-    font-size: 25px;
-    font-family: 'Raleway';
-    color: rgb(221, 200, 81);/*color de texto*/
+    font-size: 40px;
+    
+    color: rgb(13, 143, 93);/*color de texto*/
     text-shadow: 1px 1px 1px black;/*Sombra al texto*/
+    left:40%;
 }
 
 .clase_3{
-    font-size: 25px;
-    font-family: Raleway
+    font-size: 30px;
+    text-shadow: 1px 1px 1px black;/*Sombra al texto*/
+    text-align: center;
     
 }
 .clase_3, .clase_0, h1{
     text-align: center;
-    color: white;/*color de texto*/
+    color: rgb(68, 12, 141);/*color de texto*/
 }
 .clase_0{
   font-size: 20px;
@@ -207,7 +210,7 @@ clase_1: h2, clase_2 y 3: p
         
 }
 .cuadro{
-  border-top-width:3px;
+  border-top-width:5px;
   border-top-style: dashed;
   border-top-color:rgb(36, 134, 158);
 }
@@ -427,6 +430,33 @@ a{
   'GRAD' 0,
   'opsz' 48
   
+}
+
+.ITEMcarrouselE {
+  display: grid;
+  grid-auto-flow: column;
+  scroll-behavior: auto;
+  gap: 1.2rem;
+  overflow-y: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.ITEMcarrouselE::-webkit-scrollbar {
+  display: none;
+  
+}
+
+.ITEMcard {
+  scroll-snap-align: start;
+  border-radius: 20px;
+  height: 100%;
+  width: 1300px;
+  
+  margin: 0.5%;
+  padding: 0.5%;
+
 }
 
 .carrousel {
