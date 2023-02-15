@@ -84,7 +84,7 @@ function Platos(){
                   <p className="clase_3">{listarow[j].precio}</p>
                   <br/>
                   <div className="alinear_der">
-                  <img src={listarow[j].imagen} width="500" height="450" />
+                  <img src={listarow[j].imagen} width="300" height="250" />
                   </div>
                   
                 </article>
