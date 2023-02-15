@@ -26,6 +26,9 @@ const Login = () => {
   const registrarcategoria= function(){
     window.location.href='/2023-0-pw-entregable-2/registrarcategoria';
   }
+  const mispedidos = function(){
+    window.location.href='/2023-0-pw-entregable-2/platosregistrados';
+  }
     
   
 
@@ -60,7 +63,7 @@ const Login = () => {
 </button>
     </div>
     <div>
-    <button className='botonbienvenida'>
+    <button className='botonbienvenida' onClick={mispedidos}>
   <span>Mis pedidos</span>
 </button>
     </div>

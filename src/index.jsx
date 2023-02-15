@@ -23,7 +23,8 @@ import Ofertas from './Presentation/ofertas/ofertas';
 import Categoria from './Presentation/categorias/nuevacategoria';
 import Agregarcarrito from './Presentation/agregarcarrito/agregarcarrito';
 import Bienvenida from './Presentation/loginrestaurante/bienvenida';
-import Registrocategoria from './Presentation/loginrestaurante/registrarcategoria'
+import Registrocategoria from './Presentation/loginrestaurante/registrarcategoria';
+import Platosregistradosrestaurante from './Presentation/loginrestaurante/platosregistrados'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -50,6 +51,7 @@ root.render(
         <Route path='/2023-0-pw-entregable-2/agregarcarrito' element={<Agregarcarrito/>}/>
         <Route path='/2023-0-pw-entregable-2/bienvenida' element={<Bienvenida/>}/>
         <Route path='/2023-0-pw-entregable-2/registrarcategoria' element={<Registrocategoria/>}/>
+        <Route path='/2023-0-pw-entregable-2/platosregistrados' element={<Platosregistradosrestaurante/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
