@@ -77,10 +77,16 @@ function Platos(){
         const temporal = []//Para reiniciar la lista
         for(let j = 0; j < listarow.length;j++){
             if (listarow[j].categoria === listacol[i]){
-                let elemento = <article className='card'>
+                let elemento = <article className='ITEMcard'>
                   <p className="clase_2">{listarow[j].producto}</p>
+                  <br/>
+                  <br/>
                   <p className="clase_3">{listarow[j].precio}</p>
-                  <img src={listarow[j].imagen} width="200" height="150"/>
+                  <br/>
+                  <div className="alinear_der">
+                  <img src={listarow[j].imagen} width="500" height="450" />
+                  </div>
+                  
                 </article>
                 temporal.push(elemento)
             }
@@ -90,8 +96,10 @@ function Platos(){
             <div>
                 <h2 className="clase_1"> {listacol[i]} </h2>
                 <br/>
+                <div className="cuadro">
+                <div className='ITEMcarrouselE'>{temporal}</div>
+                </div>
                 
-                <div className='carrousel'>{temporal}</div>
                 
                 
             </div>
