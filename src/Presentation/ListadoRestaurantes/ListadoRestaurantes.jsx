@@ -1,52 +1,60 @@
 import TopNav from '../Global/TopNav';
-import Cafeterias from './Cafeterias';
-import FoodTrucks from './FoodTrucks';
-import Platos from './Platos';
-import Snacks from './Snacks';
-import Tiendas from './Tiendas';
 import {Link} from 'react-router-dom'
+import { useEffect, useState } from 'react';
+
 
 function ListadoRestaurantes(){
-    const myStyle = {
-        width: "10%",
-        float: "right"
+    const [categoria, setCategoria] = useState(0)
+
+    const ShowRestaurantes = function(props){
+        const [listaRestaurantes, setListaRestaurantes] = useState([])
+
+    const ObtenerRestaurantes = async function(){
+        try{
+            const response = await fetch(`http://localhost:8000/backend/listado?categoria=${props.categoria}`)
+            const data = await response.json()
+            setListaRestaurantes(data.restaurantes)
+        }
+        catch(error){
+            console.error("Hubo un error obteniendo los restaurantes")
+        }
     }
+    let content = []
+    useEffect(function(){ObtenerRestaurantes()}, [])
+    for (let i = 0; i < listaRestaurantes.length; i++){
+        let rest = listaRestaurantes[i]
+        let elemento = <div className='col-md-3'>
+            <img src={rest.imagen} alt={rest.nombre} style={{width: "40%"}}/>
+            {rest.nombre}
+        </div>
+        content.push(elemento)
+    }
+    return <div className='row'>
+        {content}
+    </div>
+    }
+    const PickerCategorias = function(){
+        const categorias = ["Todos","Cafeterias","Food Trucks","Platos","Snacks","Tiendas"]
+        let content = []
+        for (let i = 0; i<6; i++){
+            let elemento = <li><button type='btn' onClick={function(){
+                setCategoria(i)
+            }}>{categorias[i]}</button></li>
+            content.push(elemento)
+        }
+        return <div>
+            <ul>
+                {content}
+            </ul>
+            <br />
+            <ShowRestaurantes categoria={categoria}/>
+        </div>
+    }
+
     return <div>
         <TopNav category = {1}/>
         <br />
-        <h1>Listado de Restaurantes</h1>
-        <div className='row'>
-            <div className='col' style={{margin : "0.5%"}}>
-                <h2>Cafeterías</h2>
-                <Cafeterias myStyle={myStyle}/>
-            </div>
-            <div className='col' style={{margin : "0.5%"}}>
-                <h2>Food Trucks</h2>
-                <FoodTrucks myStyle={myStyle}/>
-            </div>
-            <div className='col' style={{margin : "0.5%"}}>
-                <h2>Platos</h2>
-                <Platos myStyle={myStyle}/>
-            </div>
-        </div>
-        <div className='row'>
-            <div className='col' style={{margin : "0.5%"}}>
-                <h2>Snacks</h2>
-                <Snacks myStyle={myStyle}/>
-            </div>
-            <div className='col centrar' style={{margin : "0.5%"}}>
-            <h2>Acciones de comensal</h2>
-            <Link to="/2023-0-pw-entregable-2/agregarcarrito" style={{margin : "1%"}}>Agregar un plato al carrito</Link>
-            <br />
-            <Link to="/2023-0-pw-entregable-2/categorias" style={{margin : "1%"}}>Ver categorías de platos</Link>
-            <br />
-            <Link to="/2023-0-pw-entregable-2/ofertas" style={{margin : "1%"}}>Ver Ofertas</Link>
-            </div>
-            <div className='col' style={{margin : "0.5%"}}>
-                <h2>Tiendas</h2>
-                <Tiendas myStyle={myStyle}/>                
-            </div>
-        </div>
+        <PickerCategorias/>
     </div>
 }
 
