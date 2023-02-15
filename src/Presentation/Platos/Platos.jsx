@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import {Link} from "react-router-dom"
 
 
-function Platos(){
+function Platos(props){
     
     const [listaPeliculas, setListaPeliculas] = useState([])
     const [listaCategorias, setlistaCategorias] = useState([])
@@ -45,7 +45,7 @@ function Platos(){
         }
     }
     useEffect(function() {
-        filtrarCategoria("Bembos")
+        filtrarCategoria(props.restaurante)
     }, [])
     var obje = listaCategorias
     obje.forEach(function(value){
@@ -55,7 +55,7 @@ function Platos(){
     })
     
     useEffect(function() {
-        filtrarPelicula("-1","Bembos")
+        filtrarPelicula("-1",props.restaurante)
     }, [])
     var obj = listaPeliculas
     obj.forEach(function(value){
@@ -94,6 +94,9 @@ function Platos(){
         
         imprimir.push(
             <div>
+                <br/>
+                     <h1>Platos a la Carta</h1>
+                <br/>
                 <h2 className="clase_1"> {listacol[i]} </h2>
                 <br/>
                 <div className="cuadro">
@@ -128,16 +131,8 @@ function Platos(){
     
    
     return <div>
-    <TopNav category={3}/>
-        <br/>
-        <h1>Registrar una nueva categoria</h1>
-        <br/>
-        <div class="clase_0">
-    <Link  to="/2023-0-pw-entregable-2/NuevaCategoria">Agregar Categoria</Link>
-    </div> 
-    <br/>
-    <h1>Platos a la Carta</h1>
-    <br/>
+         
+    
     <div>
     {imprimir}
     

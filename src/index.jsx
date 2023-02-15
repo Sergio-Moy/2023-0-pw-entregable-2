@@ -11,6 +11,7 @@ import LoginPage from './Presentation/loginrestaurante/loginpage';
 import Seguimiento from './Presentation/Seguimiento/Seguimiento';
 import Pedidos from './Presentation/Pedidos/Pedidos';
 import Platos from './Presentation/Platos/Platos';
+import Filtroo from './Presentation/Platos/Filtrar';
 import NuevaCategoria from './Presentation/Platos/NuevaCategoria';
 import NuevaPlato from './Presentation/loginrestaurante/registrarplato';
 import './Style/style.css';
@@ -23,8 +24,7 @@ import Ofertas from './Presentation/ofertas/ofertas';
 import Categoria from './Presentation/categorias/nuevacategoria';
 import Agregarcarrito from './Presentation/agregarcarrito/agregarcarrito';
 import Bienvenida from './Presentation/loginrestaurante/bienvenida';
-import Registrocategoria from './Presentation/loginrestaurante/registrarcategoria';
-import Platosregistradosrestaurante from './Presentation/loginrestaurante/platosregistrados'
+import Registrocategoria from './Presentation/loginrestaurante/registrarcategoria'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -50,8 +50,9 @@ root.render(
         <Route path='/2023-0-pw-entregable-2/estados' element={<Estados/>}/>
         <Route path='/2023-0-pw-entregable-2/agregarcarrito' element={<Agregarcarrito/>}/>
         <Route path='/2023-0-pw-entregable-2/bienvenida' element={<Bienvenida/>}/>
+        <Route path='/2023-0-pw-entregable-2/Filtro' element={<Filtroo/>}/>
         <Route path='/2023-0-pw-entregable-2/registrarcategoria' element={<Registrocategoria/>}/>
-        <Route path='/2023-0-pw-entregable-2/platosregistrados' element={<Platosregistradosrestaurante/>}/>
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
