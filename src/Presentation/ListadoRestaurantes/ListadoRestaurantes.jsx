@@ -45,15 +45,15 @@ function ListadoRestaurantes(){
         const categorias = ["Todos","Cafeterias","Food Trucks","Platos","Snacks","Tiendas"]
         let content = []
         for (let i = 0; i<6; i++){
-            let elemento = <li><button type='btn' onClick={function(){
+            let elemento = <div className='col centrar'><button type='btn' onClick={function(){
                 setCategoria(i)
-            }}>{categorias[i]}</button></li>
+            }}>{categorias[i]}</button></div>
             content.push(elemento)
         }
         return <div>
-            <ul>
+            <div className='row'>
                 {content}
-            </ul>
+            </div>
             <br />
             <ShowRestaurantes categoria={categoria}/>
         </div>
@@ -63,6 +63,18 @@ function ListadoRestaurantes(){
         <TopNav category = {1}/>
         <br />
         <PickerCategorias/>
+        <div className='row'>
+            <div className='col'></div>
+            <div className='col centrar'>
+                <h2>Acciones de comensal</h2>
+                <Link to="/2023-0-pw-entregable-2/agregarcarrito" style={{margin : "1%"}}>Agregar un plato al carrito</Link>
+                <br />
+                <Link to="/2023-0-pw-entregable-2/categorias" style={{margin : "1%"}}>Ver categorías de platos</Link>
+                <br />
+                <Link to="/2023-0-pw-entregable-2/ofertas" style={{margin : "1%"}}>Ver Ofertas</Link>
+                </div>
+            <div className='col'></div>
+        </div>
     </div>
 }
 
