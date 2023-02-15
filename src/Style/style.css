@@ -173,24 +173,27 @@ Indice:
 clase_0: hipervinculos
 clase_1: h2, clase_2 y 3: p
 */
-.clase_1, .clase_2{
+.clase_1{
   left: 10%;
   position: relative;
 }
 .clase_1{
   color:#9c2241;
   font-weight: bold;
+  
 }
 .clase_2{
     font-size: 25px;
-    font-family: 'Raleway';
+    
     color: rgb(221, 200, 81);/*color de texto*/
     text-shadow: 1px 1px 1px black;/*Sombra al texto*/
+    text-align: center;
 }
 
 .clase_3{
     font-size: 25px;
-    font-family: Raleway
+    
+    text-align: center;
     
 }
 .clase_3, .clase_0, h1{
