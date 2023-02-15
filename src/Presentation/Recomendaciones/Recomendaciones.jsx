@@ -1,5 +1,6 @@
 import TopNav from '../Global/TopNav';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function Recomendaciones(){
@@ -7,6 +8,7 @@ function Recomendaciones(){
         margin : "2.5%",
         height : "250px"
     }
+    const navigate = useNavigate()
 
     const [listaRecomendaciones, setListaRecomendaciones] = useState([])
 
@@ -31,7 +33,7 @@ function Recomendaciones(){
         let elemento = <article className='card'>
                 <img src={articulo.imagen} alt="imagen" style={myStyle}/>
                 <p style={{textAlign: "center"}}>{articulo.texto}</p>
-            <button type='button' className='btn btn-outline-light'>¡Lo quiero!</button>
+            <button type='button' className='btn btn-outline-light' onClick={function(){navigate("/2023-0-pw-entregable-2/ofertas")}}>¡Lo quiero!</button>
             <br />
             </article>
         carrusel.push(elemento)
