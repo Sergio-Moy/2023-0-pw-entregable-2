@@ -20,7 +20,7 @@ import Pedidoregistro from './Presentation/Registrarpedido/pedidoregistro';
 import Registrarentrega from './Presentation/registrarentrega/registrarentrega';
 import Menu from './Presentation/agregarcarrito/agregarcarrito';
 import Ofertas from './Presentation/ofertas/ofertas';
-import Categoria from './Presentation/categorias/categorias';
+import Categoria from './Presentation/categorias/nuevacategoria';
 import Agregarcarrito from './Presentation/agregarcarrito/agregarcarrito';
 import Bienvenida from './Presentation/loginrestaurante/bienvenida'
 const root = ReactDOM.createRoot(document.getElementById('root'));
