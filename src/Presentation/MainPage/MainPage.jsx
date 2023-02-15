@@ -5,12 +5,13 @@ import { Link } from "react-router-dom"
 function MainPage(){
     return <div>
         <TopNav category={0}/>
+        <br />
         <img src={Logo} className="centered" style={{width: "15%"}} alt="logo" />
         <div>
             <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/listadorestaurantes">Listado de Restaurantes</Link></h2>
         </div>
         <div>
-            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/logincomensal">Cuenta de Comensal</Link></h2>
+            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/login">Cuenta de Comensal</Link></h2>
         </div>
         <div>
             <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/loginpage">Cuenta de Restaurante</Link></h2>

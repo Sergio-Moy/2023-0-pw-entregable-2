@@ -18,7 +18,7 @@ function BuscarForm(){
             <TopNav category = {5}/>
             <h1>Buscar pedido</h1>
             <label className="form-label centrar">Código de pedido:</label>
-            <input type="text" className="form-control centered" value={code}
+            <input type="text" className="centered" value={code}
             onChange={function(evt){
                 setCode(evt.target.value)
             }}/>
