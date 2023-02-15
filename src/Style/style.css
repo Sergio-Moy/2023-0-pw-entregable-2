@@ -6,52 +6,54 @@
 }
 
 div{
-  color: #ffffff;
+  color: #000000;
 }
 
 p{
-  color: #ffffff;
+  color: #000000;
   font-family: Raleway;
 }
 
 button{
-  color: #ffffff;
-  background-color: rgb(60, 38, 139);
+  color: #000000;
+  background-color: #fac172;
   font-family: Raleway;
+  border: none;
+  border-radius: 10%;
 }
 
 body button{
-  color: #ffffff;
-  background-color: rgba(48, 26, 126, 0.5);
+  color: #000000;
+  background-color: #fac172;
   font-family: Raleway;
 }
 
 button:hover{
-  background-color: #f20fb6;
+  background-color: #fe8357;
 }
 
 button:active{
-  background-color: #f29828;
+  background-color: #e25b45;
 }
 
 body h1 {
-  color: #ffffff;
+  color: #000000;
   font-family: Raleway;
 }
 
 body h2 {
-  color:#ffffff;
+  color:#000000;
   font-family: Raleway;
 }
 
 h2 a{
   font-size: 80%;
   font-family: Raleway;
-  color: #ffffff;
+  color: #000000;
 }
 
 h2 a:link {
-  color: #ffffff;
+  color: #000000;
 }
 
 tr th{
@@ -61,12 +63,12 @@ tr th{
 }
 
 h2 a:hover {
-  color: #f20fb6;
+  color: #e25b45;
   text-decoration: none;
 }
 
 h2 a:active {
-  color: #f29828;
+  color: #fac172;
   text-decoration: none;
 }
 .logorestaurante{
@@ -83,15 +85,15 @@ border-collapse: collapse;
 }
 
 body a{
-  color: #ffffff;
+  color: #000000;
   font-family: Raleway;
 }
 body a:hover{
-  color: #f20fb6;
+  color: #e25b45;
   text-decoration: none;
 }
 body a:active{
-  color: #f29828;
+  color: #fac172;
   text-decoration: none;
 }
 
@@ -102,15 +104,15 @@ img{
 
 
 td {
-    background-color: #3c268b88;
+    background-color: #adc96588;
     font-size: 25px;
-    color:#ffffff;
+    color:#000000;
     font-family: Raleway;
     text-align: center;
 }
 
 .cambiar-estado {
-  background-color:#3c268b;
+  background-color:#97b941;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -123,7 +125,7 @@ width: 300px;
 }
 
 input[type="submit"] {
-background-color: #3c268b;
+background-color: #97b941;
 color: white;
 padding: 0.5em 1em;
 border: none;
@@ -131,22 +133,22 @@ cursor: pointer;
 }
 
 input[type="text"]{
-  color: #3c268b;
+  color: #97b941;
   font-family: Raleway;
 }
 
 input[type="email"]{
-  color: #3c268b;
+  color: #97b941;
   font-family: Raleway;
 }
 
 input[type="password"]{
-  color: #3c268b;
+  color: #97b941;
   font-family: Raleway;
 }
 
 form{
-  color: #ffffff;
+  color: #000000;
   font-family: Raleway;
 }
 
@@ -156,15 +158,6 @@ margin: 0 auto;
 padding: 1em;
 background-color: rgba(255, 255, 255, 0.8);
 border-radius: 10px;
-}
-
-.closed {
-color: #4f4f4f;
-background-color: #dddddd88;
-}
-
-.closed img {
-  filter: grayscale(100%);
 }
 
 
@@ -323,8 +316,8 @@ HEAD
 }
 
 .topnav a {
-  background-color: #3c268b;
-  color: #ffffff;
+  background-color: #97b941;
+  color: #000000;
   text-align: center;
   padding: 0.5%;
   font-family: Raleway;
@@ -333,18 +326,18 @@ HEAD
 }
 
 .topnav a:hover {
-  background-color: #f20fb6;
-  color: #ffffff;
+  background-color: #fac172;
+  color: #000000;
   text-decoration: none;
 }
 
 .topnav .current{
-  background-color: #00000000;
+  background-color: #adc96588;
 }
 
 .topnav a:active {
-  background-color: #f29828;
-  color: #ffffff
+  background-color: #e25b45;
+  color: #000000
 }
 
 .col-md-3 {
@@ -361,7 +354,7 @@ HEAD
 }
 
 .page-nav{
-  color: #ffffff;
+  color: #000000;
   font-family: Raleway;
 }
 
@@ -483,7 +476,7 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #3c268b88;
+  background-color: #adc96588;
   margin: 0.5%;
   padding: 0.5%;
 
@@ -516,7 +509,7 @@ a{
   display: inline-block;
   margin: 30px;
   box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: #3c268b88;
+  background-color: #adc96588;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
@@ -536,9 +529,35 @@ a{
   padding: 40px;
 }
 
+.selector{
+  background-color: #adc965;
+  width: 100%;
+  border: none;
+  border-radius: 15%;
 
+}
 
+.selectorcurrent{
+  background-color: #adc96588;
+  width: 100%;
+  border: none;
+  border-radius: 15%;
 
+}
 
+.restaurante{
+  background-color: #adc965;
+  border-radius: 15%;
+  text-align: center;
+}
 
-
+.closed {
+  color: #4f4f4f;
+  background-color: #dddddd88;
+  border-radius: 15%;
+  text-align: center;
+  }
+  
+  .closed img {
+    filter: grayscale(100%);
+  }

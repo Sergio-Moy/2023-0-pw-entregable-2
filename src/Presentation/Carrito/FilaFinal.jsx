@@ -11,7 +11,7 @@ function FilaFinal(){
         <td style={{backgroundColor: "#00000000"}}></td>
         <td><b>Precio Total</b></td>
         <td><b>{precio}</b></td>
-        <td><button type="button" className="btn btn-outline-light">Comprar</button></td>
+        <td><button type="button">Comprar</button></td>
         <td style={{backgroundColor: "#00000000"}}></td>
 
     </tr>

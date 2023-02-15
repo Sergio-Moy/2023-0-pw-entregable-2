@@ -23,7 +23,7 @@ function BuscarForm(){
                 setCode(evt.target.value)
             }}/>
         </div>
-        <button type="submit" className="centered btn btn-outline-light"
+        <button type="submit" className="centered"
         onClick={ButtonClick}>Buscar</button>
     </form>
 }

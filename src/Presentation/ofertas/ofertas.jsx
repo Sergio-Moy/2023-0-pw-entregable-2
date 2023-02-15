@@ -11,7 +11,7 @@ const RestaurantCard = ({ data }) => (
     <h3>{data.nombre}</h3>
     <p>{data.descripción}</p>
     <p>Precio: {data.precio} soles.</p>
-    <button type="button" className="btn btn-outline-light">
+    <button type="button">
       ¡Lo quiero!
     </button>
   </div>
