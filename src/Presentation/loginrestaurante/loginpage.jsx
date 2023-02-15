@@ -1,10 +1,11 @@
 
 import React, { useState } from 'react';
+import TopNav from '../Global/TopNav';
 import './login.css'
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [imagen,setImagen]= useState('');
+  
   const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
@@ -39,7 +40,9 @@ const Login = () => {
   };
 
   return (
-    <div className="login-box">
+    <div>
+      <TopNav></TopNav>
+<div className="login-box">
         <form>
         <p>Login</p>
   <form>
@@ -63,11 +66,12 @@ const Login = () => {
   <span className="text">Button</span>
 </button>
   </form>
-  <p>Don't have an account? <a href="" className="a2">Sign up!</a></p>
   <p>{error}</p>
         </form>
   
 </div>
+    </div>
+    
   );
 };
 
