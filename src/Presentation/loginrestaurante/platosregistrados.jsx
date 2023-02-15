@@ -29,13 +29,21 @@ function PedidosRealizados() {
       <h1>Pedidos realizados</h1>
       <ul>
         {platosRegistrados.map((plato) => (
-          <li key={plato.id}>
-            <p>{plato.producto}</p>
-            <p>{plato.cantidad}</p>
-            <p>{plato.precio}</p>
-            <p>{plato.cliente}</p>
-            <p>{plato.estado}</p>
+            <div className='centrar'>
+                <div className='card'>
+                <li key={plato.id}>
+            <p>pedido: {plato.producto}</p>
+            <p>cantidad : {plato.cantidad}</p>
+            <p>codigo de verificación:{plato.codigo_verificacion}</p>
+            <p>precio: S/.{plato.precio}</p>
+            <p>Precio total: S/. {plato.precio * plato.cantidad}</p>
+            <p>cliente: {plato.cliente_nombre}</p>
+            <p>Estado: {plato.estado === 1 ? "confirmado" : plato.estado === 2 ? "en preparación" : "entregado"}</p>
           </li>
+            </div>
+            </div>
+            
+          
         ))}
       </ul>
     </div>
