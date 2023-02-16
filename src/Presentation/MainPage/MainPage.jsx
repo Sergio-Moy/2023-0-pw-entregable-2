@@ -8,19 +8,19 @@ function MainPage(){
         <br />
         <img src={Logo} className="centered" style={{width: "15%"}} alt="logo" />
         <div>
-            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/listadorestaurantes">Listado de Restaurantes</Link></h2>
+            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/listadorestaurantes"><b>Listado de Restaurantes</b></Link></h2>
         </div>
         <div>
-            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/login">Cuenta de Comensal</Link></h2>
+            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/login"><b>Cuenta de Comensal</b></Link></h2>
         </div>
         <div>
-            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/loginpage">Cuenta de Restaurante</Link></h2>
+            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/loginpage"><b>Cuenta de Restaurante</b></Link></h2>
         </div>
         <div>
-            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/recomendaciones">Recomendaciones</Link></h2>
+            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/recomendaciones"><b>Recomendaciones</b></Link></h2>
         </div>
         <div>
-            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/micarrito">Carrito</Link></h2>
+            <h2 className="centrar"><Link to="/2023-0-pw-entregable-2/micarrito"><b>Carrito</b></Link></h2>
         </div>
     </div>
 }

@@ -41,7 +41,9 @@ const Login = () => {
 
   return (
 
-        <div className="cardlogin">
+        <div>
+          <TopNav category={2}/>
+          <div className="cardlogin">
   <h4 className="title">Usuario</h4>
   <form>
     <div className="field">
@@ -60,6 +62,7 @@ const Login = () => {
     
   </form>
 </div>
+        </div>
   
     
 

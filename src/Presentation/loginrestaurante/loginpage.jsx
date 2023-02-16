@@ -41,29 +41,33 @@ const Login = () => {
 
   return (
     <div>
-      <TopNav></TopNav>
+      <TopNav category={3}/>
 <div className="login-box">
         <form>
         <p>Login</p>
   <form>
+  <label>Correo</label>
+  <br />
     <div className="user-box">
       <input type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
+        placeholder="Correo"
 />
-      <label>Email</label>
+      <br />
+      <label>Contraseña</label>
+      <br />
     </div>
     <div className="user-box">
       <input type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
+        placeholder="Contraseña"
 />
-      <label>Password</label>
     </div>
-    <button className='button' onClick={handleSubmit}>
-  <span className="text">Button</span>
+    <br />
+    <button onClick={handleSubmit}>
+  <span className="text">Iniciar Sesion</span>
 </button>
   </form>
   <p>{error}</p>
