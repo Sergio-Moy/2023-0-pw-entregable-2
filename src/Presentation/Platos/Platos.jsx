@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 
 
 function Platos(props){
-    
+    console.log("HOLLLAAA")
     const [listaPeliculas, setListaPeliculas] = useState([])
     const [listaCategorias, setlistaCategorias] = useState([])
     const [indice, setindice] = useState([])
@@ -45,7 +45,8 @@ function Platos(props){
         }
     }
     useEffect(function() {
-        filtrarCategoria(props.restaurante)
+        console.log("restaurante 1", sessionStorage.getItem("restaurante"))
+        filtrarCategoria(sessionStorage.getItem("restaurante"))
     }, [])
     var obje = listaCategorias
     obje.forEach(function(value){
@@ -55,7 +56,8 @@ function Platos(props){
     })
     
     useEffect(function() {
-        filtrarPelicula("-1",props.restaurante)
+        console.log("restaurante 2", sessionStorage.getItem("restaurante"))
+        filtrarPelicula("-1",sessionStorage.getItem("restaurante"))
     }, [])
     var obj = listaPeliculas
     obj.forEach(function(value){
@@ -94,9 +96,6 @@ function Platos(props){
         
         imprimir.push(
             <div>
-                <br/>
-                     <h1>Platos a la Carta</h1>
-                <br/>
                 <h2 className="clase_1"> {listacol[i]} </h2>
                 <br/>
                 <div className="cuadro">
@@ -131,14 +130,7 @@ function Platos(props){
     
    
     return <div>
-         
-    
-    <div>
-    {imprimir}
-    
-    </div>
-    
-    
-    </div>
+        <br/><h1>Platos a la Carta</h1><br/>
+        <div>{imprimir}</div></div>
 }
 export default Platos
