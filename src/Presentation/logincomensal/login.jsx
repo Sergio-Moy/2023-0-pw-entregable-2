@@ -26,7 +26,7 @@ const Login = () => {
       if(data.error===""){
         const jsonData = JSON.stringify(data.restaurante);
         sessionStorage.setItem('data', jsonData);
-        //window.location.href = '/2023-0-pw-entregable-2/bienvenida';
+        window.location.href = '/2023-0-pw-entregable-2/ofertas';
       }
       else{
         setError("Sus credednciales son incorrectas")
