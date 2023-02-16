@@ -2,11 +2,9 @@
 .cardbienvenida {
     width: 400px;
     height: 500px;
-    background: #00FFA0;
+    background: #adc965;
     padding: 1rem;
     border-radius: 1rem;
-    border: .5vmin solid #05060f;
-    box-shadow: .4rem .4rem #05060f;
     overflow: hidden;
   }
   
@@ -80,9 +78,8 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background: #183153;
+    background: #fac172;
     font-family: "Montserrat", sans-serif;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     border: none;
     margin: auto;
@@ -92,7 +89,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     content: " ";
     width: 0%;
     height: 100%;
-    background: #FFD401;
+    background: #e25b45;
     position: absolute;
     transition: all 0.4s ease-in-out;
     right: 0;
@@ -109,7 +106,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     text-decoration: none;
     width: 100%;
     padding: 18px 25px;
-    color: #fff;
+    color: #000;
     font-size: 1.125em;
     font-weight: 700;
     letter-spacing: 0.3em;
@@ -118,7 +115,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
    }
    
    .botonbienvenida:hover span {
-    color: #183153;
+    color: #000;
     animation: scaleUp 0.3s ease-in-out;
    }
    

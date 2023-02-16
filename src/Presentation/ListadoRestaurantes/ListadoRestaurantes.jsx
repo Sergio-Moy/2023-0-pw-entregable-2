@@ -25,13 +25,15 @@ function ListadoRestaurantes(){
         let rest = listaRestaurantes[i]
         let elemento
         if (rest.estado === 1) {
-            elemento = <div className='col-md-3'>
+            elemento = <div className='restaurante col-md-3'>
             <img src={rest.imagen} alt={rest.nombre} style={{width: "40%"}}/>
+            <br />
             {rest.nombre}
         </div>
         } else {
             elemento = <div className='closed col-md-3'>
             <img src={rest.imagen} alt={rest.nombre} style={{width: "40%"}}/>
+            <br />
             {rest.nombre}
         </div> 
         }
@@ -45,9 +47,16 @@ function ListadoRestaurantes(){
         const categorias = ["Todos","Cafeterias","Food Trucks","Platos","Snacks","Tiendas"]
         let content = []
         for (let i = 0; i<6; i++){
-            let elemento = <div className='col centrar'><button type='btn' onClick={function(){
+            let elemento
+           if (i === categoria) {
+            elemento = <div className='col centrar'><button type='button' className='selectorcurrent' onClick={function(){
                 setCategoria(i)
             }}>{categorias[i]}</button></div>
+           } else {
+            elemento = <div className='col centrar'><button type='button' className='selector' onClick={function(){
+                setCategoria(i)
+            }}>{categorias[i]}</button></div>
+           }
             content.push(elemento)
         }
         return <div>

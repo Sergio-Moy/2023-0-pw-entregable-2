@@ -4,8 +4,8 @@ function FilaCarrito(props){
         <td>{props.producto}</td>
         <td>{props.precio}</td>
         <td>{props.cantidad}</td>
-        <td><button type="button" className="btn btn-outline-light">-</button>
-        <button type="button" className="btn btn-outline-light">+</button></td>
+        <td><button type="button">-</button>
+        <button type="button">+</button></td>
     </tr>
 }
 

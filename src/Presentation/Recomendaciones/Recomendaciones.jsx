@@ -33,7 +33,7 @@ function Recomendaciones(){
         let elemento = <article className='card'>
                 <img src={articulo.imagen} alt="imagen" style={myStyle}/>
                 <p style={{textAlign: "center"}}>{articulo.texto}</p>
-            <button type='button' className='btn btn-outline-light' onClick={function(){navigate("/2023-0-pw-entregable-2/ofertas")}}>¡Lo quiero!</button>
+            <button type='button' onClick={function(){navigate("/2023-0-pw-entregable-2/ofertas")}}>¡Lo quiero!</button>
             <br />
             </article>
         carrusel.push(elemento)
