@@ -26,9 +26,16 @@ function Registrarentrega(){
     }
      
     return <form>
+      <div className='centrar'>
       <label>Código de pedido</label>
+      <br/>
+      <br/>
       <input type="text" id="code" value={code} onChange={(event) => setCode(event.target.value)}/>
+      <br/>
+      <br/>
       <button type="button" onClick={handleSubmit}>Buscar Pedido</button>
+      </div>
+      
     </form>
   }
   const vacio = function(){
@@ -41,6 +48,7 @@ function Registrarentrega(){
     if (error === "") {
       if (pedido!== "") {
         return <table>
+          
         <tr>
           <th>Código</th>
           <th>Detalle</th>
