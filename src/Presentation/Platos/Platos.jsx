@@ -130,7 +130,16 @@ function Platos(props){
     
    
     return <div>
-        <br/><h1>Platos a la Carta</h1><br/>
+        <TopNav category={3}/>
+        <br/>
+        <h1>Registrar una nueva categoria</h1>
+        <br/>
+        <div className="clase_0">
+    <Link  to="/2023-0-pw-entregable-2/NuevaCategoria">Agregar Categoria</Link>
+    </div>
+        <br/>
+        <h1>Platos a la Carta de {sessionStorage.getItem("restaurante")}</h1>
+        <br/>
         <div>{imprimir}</div></div>
 }
 export default Platos

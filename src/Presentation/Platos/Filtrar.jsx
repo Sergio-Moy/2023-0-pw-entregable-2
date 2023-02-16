@@ -2,12 +2,13 @@ import TopNav from '../Global/TopNav';
 import { useEffect, useState } from "react"
 import {Link} from "react-router-dom"
 import Platos from "./Platos"
+import { Await, useNavigate } from "react-router-dom"
 function Filtro(){
     const [listaCategorias, setListaCategorias] = useState([])
     const [Restaurante, setRestaurante] = useState('')
     const [error, setError] = useState("")
     const [rpta, setrpta] = useState("")
-    
+    const navigate = useNavigate()
         const obtenerCategoriasAsyncAwait = async function() {
           try {
                 const response = await fetch(`http://localhost:8000/backend/categorias_10/listar?restaurante=-1`)
@@ -71,9 +72,7 @@ function Filtro(){
     const respuesta = function(){
         console.log("Funcion Respuesta",rpta)
         if(rpta!==""){
-            return <div>
-                <Platos />
-            </div>
+            navigate("/2023-0-pw-entregable-2/platos")
         }else{
             return <div></div>
         }
@@ -82,14 +81,10 @@ function Filtro(){
     return <div>
     <TopNav category={3}/>
         <br/>
-        <h1>Registrar una nueva categoria</h1>
-        <br/>
-        <div className="clase_0">
-    <Link  to="/2023-0-pw-entregable-2/NuevaCategoria">Agregar Categoria</Link>
-    </div>
     <div className="mt-4 mb-4">
         <h1>Restaurantes</h1>
         <div>
+            <br/>
     <select className="form-select"
         id = "Restaurante"
         value={Restaurante}
@@ -112,7 +107,11 @@ function Filtro(){
                 */
             }
             </select>
+            <br/>
+            <br/>
+            <div className='centrar'>
             <button type="button" onClick={Tabla}>Realizar Filtro</button>
+            </div>
             </div>
             {respuesta()}
             
