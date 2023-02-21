@@ -191,6 +191,7 @@ function Pedidoregistro () {
         value={Estado}
         onChange={(event) => setEstado(event.target.value)}
         >
+            <option value="">Selecciona un Estado</option>
             <option value="1">Confirmado</option>
             <option value="2">En preparación</option>
             <option value="3">Entregado</option>
@@ -202,6 +203,7 @@ function Pedidoregistro () {
         value={Registrado}
         onChange={(event) => setRegistrado(event.target.value)}
         >
+            <option value="">¿Su pedido esta activo?</option>
             <option value="1">Si</option>
             <option value="2">No</option>
             </select>
