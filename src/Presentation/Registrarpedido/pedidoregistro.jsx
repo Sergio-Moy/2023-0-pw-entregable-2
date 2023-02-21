@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {useNavigate } from "react-router-dom"
+
 import TopNav from '../Global/TopNav';
 function Pedidoregistro () {
   
@@ -9,7 +9,7 @@ function Pedidoregistro () {
   const [ListaRestaurante, setListaRestaurante] = useState([]);
   const [ListaCliente, setListaCliente] = useState([]);
 
-  const navigate = useNavigate()
+
   //BLOQUE 2
   const [Producto, setProducto] = useState('');
     const [Cantidad, setCantidad] = useState('');
@@ -97,23 +97,16 @@ function Pedidoregistro () {
       console.log(data);
       if (data.error ==="") {
         setError(data.error)
+        setPedido(data.pedidos)
       }
       else{
         setError(data.error)
       }
     }
 
-    /*
-  useEffect(function() {
-      if(rpta!==""){
-        handleSubmit()
-      }
-  }, [])
-  console.log("PEDIDO",pedido)
-*/
+    
   const respuesta_parte1 = function(){
     handleSubmit()
-    navigate("/2023-0-pw-entregable-2/pedidoregistro")
     
   }
   
@@ -217,6 +210,7 @@ function Pedidoregistro () {
   const vacio = function(){
     console.log('Se hizo click')
     setPedido('')
+    window.location.reload(true);
   }
   
   const Tabla = function(){
@@ -230,6 +224,13 @@ function Pedidoregistro () {
           <th>Producto</th>
           <th>Cantidad</th>
           <th>Precio</th>
+          <th>Total</th>
+          <th>Categoria</th>
+          <th>Restaurante</th>
+          <th>Cliente</th>
+          <th>Codigo verificación</th>
+          <th>Estado</th>
+          <th>Registrado</th>
         </tr>
         
           {console.log("ARRAY DE OBJETOS",pedido)}
@@ -238,6 +239,13 @@ function Pedidoregistro () {
           <th>{pedido[0].Producto}</th>
           <th>{pedido[0].Cantidad}</th>
           <th>{pedido[0].Precio}</th>
+          <th>{pedido[0].Total}</th>
+          <th>{pedido[0].Categoria}</th>
+          <th>{pedido[0].Restaurante}</th>
+          <th>{pedido[0].Cliente}</th>
+          <th>{pedido[0].Codigo_verificación}</th>
+          <th>{pedido[0].Estado}</th>
+          <th>{pedido[0].Registrado}</th>
         </tr>
            
         
@@ -248,6 +256,8 @@ function Pedidoregistro () {
       return <h2>{error}</h2>
     }
   }
+  
+
   return <div>
     <TopNav category={3}/>
     <br />
@@ -255,6 +265,7 @@ function Pedidoregistro () {
     <FormRegistrar/>
     <br />
     <Tabla/>
+    <br />
   </div>
 }
   
