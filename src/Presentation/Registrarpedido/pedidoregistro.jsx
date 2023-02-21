@@ -2,115 +2,13 @@ import React, { useEffect, useState } from 'react';
 import {useNavigate } from "react-router-dom"
 import TopNav from '../Global/TopNav';
 function Pedidoregistro () {
-  /*
-  const [order, setOrder] = useState({
-    name: '',
-    address: '',
-    date: '',
-    dish: ''
-  });
-  const [orders, setOrders] = useState([]);
-
-  const handleInputChange = event => {
-    setOrder({ ...order, [event.target.name]: event.target.value });
-  };
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    setOrders([...orders, order]);
-    setOrder({ name: '', address: '', date: '', dish: '' });
-  };
-  const onClearOrders = () => {
-    setOrders([]);
-  };
   
-  return (
-    <div>
-      <TopNav category ={3}/>
-      <div className='centrar'>
-    <form onSubmit={handleSubmit} style={{paddingTop:'30px'}}>
-      <div className='form-group'><input
-      type="text"
-      id="Nombre"
-      name="name"
-      value={order.name}
-      onChange= {handleInputChange}
-      
-      placeholder="Nombre"
-    /></div>
-    <div className='form-group'>
-    <input
-      type="text"
-      id = "Direccion"
-      name="address"
-      value={order.address}
-      onChange={handleInputChange}
-      placeholder="Dirección"
-    />
-    </div>
-    <div className='form-group'>
-    <input
-      type="date"
-      name="date"
-      value={order.date}
-      onChange={handleInputChange}
-      placeholder="Date"
-    />
-    </div>
-    
-    <select
-      id = "Producto"
-      name="dish"
-      value={order.dish}
-      onChange={handleInputChange}
-    >
-      <option value="">Selecciona un plato</option>
-      <option value="Pizza">Pizza</option>
-      <option value="Pasta">Pasta</option>
-      <option value="Salad">Salad</option>
-    </select>
-    <button type="submit">Realizar pedido</button>
-    
-  </form>
-  
-  </div>
-  <OrderTable orders={orders} />
-    <button onClick={onClearOrders}>Limpiar carrito</button>
-    </div>
-
-  );
-};
-
-const OrderTable = ({ orders }) => (
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Dirección</th>
-        <th>Día</th>
-        <th>Plato</th>
-      </tr>
-    </thead>
-    <tbody>
-      {orders.map((order, index) => (
-        <tr key={index}>
-          <td>{order.name}</td>
-          <td>{order.address}</td>
-          <td>{order.date}</td>
-          <td>{order.dish}</td>
-        </tr>
-      ))}
-    </tbody>
-    
-  </table>
-  
-);*/
   const [pedido, setPedido] = useState("");
   const [error, setError] = useState("");
   const [ListaCategoria, setListaCategoria] = useState([]);
   const [ListaRestaurante, setListaRestaurante] = useState([]);
   const [ListaCliente, setListaCliente] = useState([]);
-  const [rpta, setrpta] = useState("")
+
   const navigate = useNavigate()
   //BLOQUE 2
   const [Producto, setProducto] = useState('');
@@ -199,7 +97,6 @@ const OrderTable = ({ orders }) => (
       console.log(data);
       if (data.error ==="") {
         setError(data.error)
-        setPedido(data.producto)
       }
       else{
         setError(data.error)
@@ -215,19 +112,11 @@ const OrderTable = ({ orders }) => (
   console.log("PEDIDO",pedido)
 */
   const respuesta_parte1 = function(){
-    setrpta("True")
     handleSubmit()
-    console.log("PEDIDO",pedido)
-  }
+    navigate("/2023-0-pw-entregable-2/pedidoregistro")
     
-  const respuesta_parte2 = function(){
-      console.log("Funcion Respuesta",rpta)
-      if(rpta!==""){
-          navigate("/2023-0-pw-entregable-2/pedidoregistro")
-      }else{
-          return <div></div>
-      }
   }
+  
 
   const FormRegistrar = function(){
   
@@ -257,7 +146,8 @@ const OrderTable = ({ orders }) => (
             {
                 ListaCategoria.map(function(cat){
                     return <option value={ cat.id }>
-                        { cat.nombre }
+                        { cat.nombre 
+                        }
                     </option>
                 })
             }
@@ -326,26 +216,7 @@ const OrderTable = ({ orders }) => (
     console.log('Se hizo click')
     setPedido('')
   }
-  const Registro = function(){
-    const temporal = []
-    pedido.forEachfunction(function(pelicula, index) {
-      temporal.push(
-        <tr>
-          {
-            /*
-          <th>{pedido[index].Nombre}</th>
-          <th>{pedido[index].Producto}</th>
-          <th>{pedido[index].Direccion}</th>
-          <th>{pedido[index].Cantidad}</th>
-          onClick={handleSubmit}
-          */
-    }
-        </tr>
-      )
-      
-    })
-    return temporal
-  }
+  
   const Tabla = function(){
     if (error === "") {
       if (pedido!== "") {
