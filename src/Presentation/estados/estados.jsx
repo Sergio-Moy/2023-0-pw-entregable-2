@@ -57,7 +57,6 @@ const Pedido = ({ pedido }) => {
 };
 
 function Estados(){
-
   const [listaPedidos, setListaPedidos] = useState([])
   const obtenerPedidos = async function(){
       try{
