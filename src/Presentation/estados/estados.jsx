@@ -1,33 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import TopNav from '../Global/TopNav';
 
-let cambios = ""
-if (sessionStorage["CAMBIOS"]) {
-  let obj = JSON.parse(sessionStorage.getItem("CAMBIOS"))
-  let arr = obj.arreglo
-  cambios = arr
-}
-
 const Pedido = ({ pedido }) => {
   const [status, setStatus] = useState(pedido.status);
   
   const handlePreparadoClick = () => {
-    setStatus(1);
-    let id = pedido.id - 1
-    cambios[id]  = 1
-    let obj = JSON.stringify({arreglo : cambios})
-    sessionStorage.setItem("CAMBIOS", obj)
+    let bodyObj = {
+      id : pedido.id,
+      estado : 2
+    }
+    let bodySTR = JSON.stringify(bodyObj)
+    fetch("http://localhost:8000/backend/cambiarestado", {
+      method : "POST",
+      body : bodySTR
+    })
+    window.location.reload(true)
   };
 
   const handleTerminadoClick = () => {
-    setStatus(2);
-    let id = pedido.id - 1
-    cambios[id]  = 1
-    let obj = JSON.stringify({arreglo : cambios})
-    sessionStorage.setItem("CAMBIOS", obj)
+    let bodyObj = {
+      id : pedido.id,
+      estado : 3
+    }
+    let bodySTR = JSON.stringify(bodyObj)
+    fetch("http://localhost:8000/backend/cambiarestado", {
+      method : "POST",
+      body : bodySTR
+    })
+    window.location.reload(true)
   };
 
-  const estados = ["Pendiente", "En preparacion", "Terminado"]
+  const estados = ["", "Pendiente", "En preparacion", "Terminado"]
 
   return (
         <tr>
@@ -36,17 +39,17 @@ const Pedido = ({ pedido }) => {
             <td>{pedido.detalles}</td>
             <td>{estados[pedido.status]}</td>
             <td><div>
-        {status === 0 && (
+        {status === 1 && (
           <>
-            <button onClick={handlePreparadoClick}>Preparado</button>
+            <button onClick={handlePreparadoClick}>En preparación</button>
             <button onClick={handleTerminadoClick}>Terminado</button>
           </>
         )}
-        {status === 1 && (
-            pedido.status=1,
+        {status === 2 && (
+            pedido.status=2,
           <button onClick={handleTerminadoClick}>Terminado</button>
         )}
-        {status === 2 && (pedido.status=2,<div>Pedido Terminado</div>)}
+        {status === 3 && (pedido.status=3,<div>Pedido Terminado</div>)}
       </div></td>
       
         </tr>
@@ -54,21 +57,11 @@ const Pedido = ({ pedido }) => {
 };
 
 function Estados(){
-  if(cambios === ""){
-    cambios = [0, 0, 0, 0]}
-  let cuerpo =  {
-    1 : cambios[0],
-    2 : cambios[1],
-    3 : cambios[2],
-    4 : cambios[3],
-  }
+
   const [listaPedidos, setListaPedidos] = useState([])
   const obtenerPedidos = async function(){
       try{
-          const response = await fetch("http://localhost:8000/backend/cambiarestado", {
-            method : "POST",
-            body : JSON.stringify(cuerpo)
-          })
+          const response = await fetch("http://localhost:8000/backend/cambiarestado")
           const data = await response.json()
           setListaPedidos(data.arreglo)
       }

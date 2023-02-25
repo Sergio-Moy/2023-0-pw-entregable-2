@@ -261,8 +261,100 @@ function Pedidoregistro () {
   return <div>
     <TopNav category={3}/>
     <br />
-    <h1>Registrar una entrega</h1>
-    <FormRegistrar/>
+    <h1>Registrar un pedido</h1>
+    <form>
+      
+      <br/>
+      <div className='centrar'>
+      <label>Producto:&#160;&#160;</label>
+      <input type="text" id="code" value={Producto} onChange={(event) => setProducto(event.target.value)}/>
+      <br/>
+      <label>Cantidad:&#160;&#160;</label>
+      <input type="text" id="code" value={Cantidad} onChange={(event) => setCantidad(event.target.value)}/>
+      <br/>
+      <label>Precio:&#160;&#160;</label>
+      <input type="text" id="code" value={Precio} onChange={(event) => setPrecio(event.target.value)}/>
+      <br/>
+      <label>Codigo Verificacion:&#160;&#160;</label>
+      <input type="text" id="code" value={Codigo_verificación} onChange={(event) => setCodigo_verificación(event.target.value)}/>
+      <br/>
+      <label>Categoria:&#160;&#160;</label>
+      <select className="form-select"
+        id = "Categoria"
+        value={Categoria_id}
+        onChange={(event) => setCategoria_id(event.target.value)}
+        >
+            <option value="">Selecciona una Categoria</option>
+            {
+                ListaCategoria.map(function(cat){
+                    return <option value={ cat.id }>
+                        { cat.nombre 
+                        }
+                    </option>
+                })
+            }
+            </select>
+      <br/>
+      <label>Restaurante:&#160;&#160;</label>
+      <select className="form-select"
+        id = "Restaurante"
+        value={Restaurante_id}
+        onChange={(event) => setRestaurante_id(event.target.value)}
+        >
+            <option value="">Selecciona un Restaurante</option>
+            {
+                ListaRestaurante.map(function(cat){
+                    return <option value={ cat.id }>
+                        { cat.nombre }
+                    </option>
+                })
+            }
+            </select>
+      <br/>
+      <label>Cliente:&#160;&#160;</label>
+      <select className="form-select"
+        id = "Cliente"
+        value={Cliente_id}
+        onChange={(event) => setCliente_id(event.target.value)}
+        >
+            <option value="">Selecciona un Cliente</option>
+            {
+                ListaCliente.map(function(cat){
+                    return <option value={ cat.id }>
+                        { cat.nombre }
+                    </option>
+                })
+            }
+            </select>
+      <br/>
+      <label>Estado del Pedido:&#160;&#160;</label>
+      <select className="form-select"
+        id = "Estado"
+        value={Estado}
+        onChange={(event) => setEstado(event.target.value)}
+        >
+            <option value="">Selecciona un Estado</option>
+            <option value="1">Confirmado</option>
+            <option value="2">En preparación</option>
+            <option value="3">Entregado</option>
+            </select>
+      <br/>
+      <label>Registrado:&#160;&#160;</label>
+      <select className="form-select"
+        id = "Registrado"
+        value={Registrado}
+        onChange={(event) => setRegistrado(event.target.value)}
+        >
+            <option value="">¿Su pedido esta activo?</option>
+            <option value="1">Si</option>
+            <option value="2">No</option>
+            </select>
+      <br/>
+      </div>
+      <div className='centrar'>
+      <button type="button" onClick={respuesta_parte1}>Realizar Pedido</button>
+      </div>
+    </form>
     <br />
     <Tabla/>
     <br />
