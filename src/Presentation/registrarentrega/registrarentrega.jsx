@@ -1,78 +1,24 @@
 import TopNav from "../Global/TopNav"
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-
+import { useNavigate } from "react-router-dom"
 function Registrarentrega(){
-  const [pedido, setPedido] = useState("")
-  const [error, setError] = useState("")
-  const FormRegistrar = function(){
-    const [code, setCode] = useState('');
-    const handleSubmit = async function(event){
-      const body = {
-        code : code
-      }
-      const response = await fetch('http://localhost:8000/backend/registrarentrega', {method : "POST",
-      body : JSON.stringify(body)})
-
-      const data = await response.json()
-      if (data.error ==="") {
-        setError(data.error)
-        setPedido(data.producto)
-      }
-      else{
-        setError(data.error)
-      }
-    }
-     
-    return <form>
-      <div className='centrar'>
-      <label>Código de pedido</label>
-      <br/>
-      <br/>
-      <input type="text" id="code" value={code} onChange={(event) => setCode(event.target.value)}/>
-      <br/>
-      <br/>
-      <button type="button" onClick={handleSubmit}>Buscar Pedido</button>
-      </div>
-      
-    </form>
-  }
-  const vacio = function(){
-    console.log('Se hizo click')
-    setPedido('')
-    setError('')
-    return <div>holla</div>
-  }
-  const Tabla = function(){
-    if (error === "") {
-      if (pedido!== "") {
-        return <table>
-          
-        <tr>
-          <th>Código</th>
-          <th>Detalle</th>
-          <th>Código de verificación</th>
-        </tr>
-        <tr>
-          <th>{pedido.code}</th>
-          <th>{pedido.desc}</th>
-          <th>{pedido.code_v}</th>
-          <th><button type="submit" onClick={vacio}>Confirmar entrega</button></th>
-        </tr>
-      </table>
-      }
-    }
-    else {
-      return <h2>{error}</h2>
-    }
+  const [code, setcode] = useState("")
+  
+  const navigate = useNavigate()
+  const Llamar = function(){
+    navigate("/2023-0-pw-entregable-2/tabla")
   }
   return <div>
     <TopNav category={3}/>
-    <br />
-    <h1>Registrar una entrega</h1>
-    <FormRegistrar/>
-    <Tabla/>
+    <br/>
+    <div className='centrar'>
+    <h1>Registrar Entrega</h1>
+    <br/>
+    <input type="text" id="code" value={code} onChange={(event) => setcode(event.target.value)}/>
+    {sessionStorage.setItem('La_llave', code)}
+    <br/>
+    <button type="button" onClick={Llamar}>Realizar Filtro</button>
+    </div>
   </div>
 }
 
