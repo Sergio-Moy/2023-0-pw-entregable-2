@@ -22,7 +22,7 @@ function NuevaCategoria() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8000/backend/nuevacategoria", {
+      const response = await fetch("https://restaurantes20194359.azurewebsites.net/backend/nuevacategoria", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -23,7 +23,7 @@ function Pedidoregistro () {
 
     const obtenerClienteAsyncAwait = async function() {
       try {
-            const response = await fetch(`http://localhost:8000/backend/ObtenerSoloCliente_7/listar?codigo=-1`)
+            const response = await fetch(`https://restaurantes20194359.azurewebsites.net/backend/ObtenerSoloCliente_7/listar?codigo=-1`)
             const data = await response.json()//Se obtiene la data en forma de objeto
         if(data.error === ""){
           setListaCliente(data.Pedidos)//Variable de estado
@@ -42,7 +42,7 @@ function Pedidoregistro () {
 
     const obtenerRestauranteAsyncAwait = async function() {
       try {
-            const response = await fetch(`http://localhost:8000/backend/ObtenerSoloRestaurante_7/listar?codigo=-1`)
+            const response = await fetch(`https://restaurantes20194359.azurewebsites.net/backend/ObtenerSoloRestaurante_7/listar?codigo=-1`)
             const data = await response.json()//Se obtiene la data en forma de objeto
         if(data.error === ""){
           setListaRestaurante(data.Pedidos)//Variable de estado
@@ -61,7 +61,7 @@ function Pedidoregistro () {
 
     const obtenerCategoriasAsyncAwait = async function() {
       try {
-            const response = await fetch(`http://localhost:8000/backend/categorias_10/listar?restaurante=-1`)
+            const response = await fetch(`https://restaurantes20194359.azurewebsites.net/backend/categorias_10/listar?restaurante=-1`)
             const data = await response.json()//Se obtiene la data en forma de objeto
         if(data.error === ""){
           setListaCategoria(data.pedidos)//Variable de estado
@@ -90,7 +90,7 @@ function Pedidoregistro () {
         Estado : Estado,
         Registrado : Registrado
       }
-      const response = await fetch('http://localhost:8000/backend/ObtenerPedido_Registrar_7/listar', {method : "POST",
+      const response = await fetch('https://restaurantes20194359.azurewebsites.net/backend/ObtenerPedido_Registrar_7/listar', {method : "POST",
       body : JSON.stringify(body)})
 
       const data = await response.json()

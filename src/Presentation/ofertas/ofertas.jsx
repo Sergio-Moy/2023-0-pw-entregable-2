@@ -21,7 +21,7 @@ const Ofertas = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const rawResponse = await fetch("http://localhost:8000/backend/ofertas");
+      const rawResponse = await fetch("https://restaurantes20194359.azurewebsites.net/backend/ofertas");
       await rawResponse.json().then((data) => {
         setOfertasDatos(data);
         console.log(data);

@@ -11,7 +11,7 @@ function Filtro(){
     const navigate = useNavigate()
         const obtenerCategoriasAsyncAwait = async function() {
           try {
-                const response = await fetch(`http://localhost:8000/backend/categorias_10/listar?restaurante=-1`)
+                const response = await fetch(`https://restaurantes20194359.azurewebsites.net/backend/categorias_10/listar?restaurante=-1`)
                 const data = await response.json()//Se obtiene la data en forma de objeto
             if(data.error === ""){
                 setListaCategorias(data.pedidos)//Variable de estado

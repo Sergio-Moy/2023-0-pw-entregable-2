@@ -11,7 +11,7 @@ function ListadoRestaurantes(){
 
     const ObtenerRestaurantes = async function(){
         try{
-            const response = await fetch(`http://localhost:8000/backend/listado?categoria=${props.categoria}`)
+            const response = await fetch(`https://restaurantes20194359.azurewebsites.net/backend/listado?categoria=${props.categoria}`)
             const data = await response.json()
             setListaRestaurantes(data.restaurantes)
         }

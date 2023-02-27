@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function PedidosRealizados() {
   const [platosRegistrados, setPlatosRegistrados] = useState([]);
@@ -15,7 +16,7 @@ function PedidosRealizados() {
   useEffect(() => {
     const fetchPlatosRegistrados = async () => {
       if (restauranteId) {
-        const response = await fetch(`http://localhost:8000/backend/platospedidos?id=${restauranteId}`);
+        const response = await fetch(`https://restaurantes20194359.azurewebsites.net/backend/platospedidos?id=${restauranteId}`);
         const data = await response.json();
         setPlatosRegistrados(data.platos);
         console.log(data);
@@ -29,6 +30,7 @@ function PedidosRealizados() {
   return (
     <div>
       <h1>Pedidos realizados</h1>
+      <Link to="/2023-0-pw-entregable-2/estados" className='centrar'>Modificar el estado de un pedido</Link>
       <ul>
         {platosRegistrados.map((plato) => (
             <div className='centrar'>

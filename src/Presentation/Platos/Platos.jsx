@@ -17,7 +17,7 @@ function Platos(props){
     const filtrarPelicula = async function (categoriaId, restauranteId) {
         try {
             const response = await fetch(
-                `http://localhost:8000//backend/platos_10/listar?categoria=${categoriaId}&restaurante=${restauranteId}`
+                `https://restaurantes20194359.azurewebsites.net/backend/platos_10/listar?categoria=${categoriaId}&restaurante=${restauranteId}`
                 )
             const data = await response.json()
             if(data.error===""){
@@ -32,7 +32,7 @@ function Platos(props){
     const filtrarCategoria = async function (restauranteId) {
         try {
             const response = await fetch(
-                `http://localhost:8000/backend/categorias_10/listar?restaurante=${restauranteId}`
+                `https://restaurantes20194359.azurewebsites.net/backend/categorias_10/listar?restaurante=${restauranteId}`
                 )
             const data = await response.json()
             if(data.error===""){

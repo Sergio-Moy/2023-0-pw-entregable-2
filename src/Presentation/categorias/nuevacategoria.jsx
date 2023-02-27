@@ -48,7 +48,7 @@ const Categoria = () => {
 
   const getCategories = async (restauranteId) => {
     const rawResponse = await fetch(
-      "http://localhost:8000/backend/platosprueba?id=" + restauranteId
+      "https://restaurantes20194359.azurewebsites.net/backend/platosprueba?id=" + restauranteId
     );
     await rawResponse.json().then((data) => {
       setCategories(data.categorias);
@@ -57,7 +57,7 @@ const Categoria = () => {
 
   const getData = async (categoriaId, restauranteId) => {
     const rawResponse = await fetch(
-      "http://localhost:8000/backend/platos_10/listar?categoria=" +
+      "https://restaurantes20194359.azurewebsites.net/backend/platos_10/listar?categoria=" +
         categoriaId +
         "&restaurante=" +
         restauranteId
@@ -69,7 +69,7 @@ const Categoria = () => {
 
   const getRestaurantes = async () => {
     const rawResponse = await fetch(
-      "http://localhost:8000/backend/obtener_restaurantes"
+      "https://restaurantes20194359.azurewebsites.net/backend/obtener_restaurantes"
     );
     await rawResponse.json().then((data) => {
       setRestaurantes(data.restaurantes);

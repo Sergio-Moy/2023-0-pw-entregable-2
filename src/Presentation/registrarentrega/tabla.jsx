@@ -6,7 +6,7 @@ function Tabla(){
   
   const obtenerClienteAsyncAwait = async function(codigo) {
     try {
-          const response = await fetch(`http://localhost:8000/backend/ObtenerSoloPedido_filrado_codigo/listar?codigo=${codigo}`)
+          const response = await fetch(`https://restaurantes20194359.azurewebsites.net/backend/ObtenerSoloPedido_filrado_codigo/listar?codigo=${codigo}`)
           const data = await response.json()//Se obtiene la data en forma de objeto
       if(data.error === ""){
         setError(data.error)
@@ -31,7 +31,7 @@ function Tabla(){
       "Codigo_verificación" : sessionStorage.getItem('La_llave'),
       "estado" : 3
     }
-    const response = await fetch('http://localhost:8000/backend/registrarentrega', {method : "POST",
+    const response = await fetch('https://restaurantes20194359.azurewebsites.net/backend/registrarentrega', {method : "POST",
     body : JSON.stringify(body)})
     const data = await response.json()
     if(data.error === ""){

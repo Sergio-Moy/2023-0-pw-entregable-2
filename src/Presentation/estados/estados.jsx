@@ -10,7 +10,7 @@ const Pedido = ({ pedido }) => {
       estado : 2
     }
     let bodySTR = JSON.stringify(bodyObj)
-    fetch("http://localhost:8000/backend/cambiarestado", {
+    fetch("https://restaurantes20194359.azurewebsites.net/backend/cambiarestado", {
       method : "POST",
       body : bodySTR
     })
@@ -23,7 +23,7 @@ const Pedido = ({ pedido }) => {
       estado : 3
     }
     let bodySTR = JSON.stringify(bodyObj)
-    fetch("http://localhost:8000/backend/cambiarestado", {
+    fetch("https://restaurantes20194359.azurewebsites.net/backend/cambiarestado", {
       method : "POST",
       body : bodySTR
     })
@@ -60,7 +60,7 @@ function Estados(){
   const [listaPedidos, setListaPedidos] = useState([])
   const obtenerPedidos = async function(){
       try{
-          const response = await fetch("http://localhost:8000/backend/cambiarestado")
+          const response = await fetch("https://restaurantes20194359.azurewebsites.net/backend/cambiarestado")
           const data = await response.json()
           setListaPedidos(data.arreglo)
       }

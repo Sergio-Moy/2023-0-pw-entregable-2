@@ -14,7 +14,7 @@ function Recomendaciones(){
 
     const obtenerRecomendaciones = async function(){
         try{
-            const response = await fetch("http://localhost:8000/backend/recomendaciones")
+            const response = await fetch("https://restaurantes20194359.azurewebsites.net/backend/recomendaciones")
             const data = await response.json()
             setListaRecomendaciones(data.recomendaciones)
         }

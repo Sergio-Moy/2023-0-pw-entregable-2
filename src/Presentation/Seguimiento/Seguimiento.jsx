@@ -11,7 +11,7 @@ function Seguimiento(){
     const filtrarPelicula = async function (codigoId) {
         try {
             const response = await fetch(
-                `http://localhost:8000/backend/ObtenerPedidos_8/listar?codigo=${codigoId}`
+                `https://restaurantes20194359.azurewebsites.net/backend/ObtenerPedidos_8/listar?codigo=${codigoId}`
                 )
             const data = await response.json()
             if(data.error===""){
