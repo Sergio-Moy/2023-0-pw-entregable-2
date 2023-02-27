@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function App() {
+  const navigate = useNavigate()
     const [categorias, setCategorias] = useState([]);
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("");
     const [categoriaID,setCategoriaId]=useState("");
@@ -13,7 +14,7 @@ function App() {
     const categorias2 = async function (categoriaId) {
       try {
         const response = await fetch(
-          `http://localhost:8000/backend/platosprueba?id=${categoriaId}`
+          `https://restaurantes20194359.azurewebsites.net/backend/platosprueba?id=${categoriaId}`
         );
         const data = await response.json();
   
@@ -39,7 +40,7 @@ function App() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await fetch("http://localhost:8000/backend/crearplato", {
+          const response = await fetch("https://restaurantes20194359.azurewebsites.net/backend/crearplato", {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -75,7 +76,7 @@ function App() {
       fetchData();
     }, []);
     const regresar = function(){
-      window.location.href='/2023-0-pw-entregable-2/bienvenida';
+      navigate('/2023-0-pw-entregable-2/bienvenida');
     }
   
     return (

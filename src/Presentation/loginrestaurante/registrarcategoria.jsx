@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function NuevaCategoria() {
+  const navigate = useNavigate()
   const [nombreCategoria, setNombreCategoria] = useState('');
   const [restauranteId, setRestauranteId] = useState('');
 
@@ -40,7 +42,7 @@ function NuevaCategoria() {
     }
   };
   const regresar = function(){
-    window.location.href='/2023-0-pw-entregable-2/bienvenida';
+    navigate('/2023-0-pw-entregable-2/bienvenida');
   }
   
   return (

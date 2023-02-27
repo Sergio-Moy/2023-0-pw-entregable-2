@@ -1,8 +1,10 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import TopNav from '../Global/TopNav';
 import './login.css'
 const Login = () => {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
@@ -26,7 +28,7 @@ const Login = () => {
       if(data.error===""){
         const jsonData = JSON.stringify(data.restaurante);
         sessionStorage.setItem('data', jsonData);
-        window.location.href = '/2023-0-pw-entregable-2/bienvenida';
+        navigate('/2023-0-pw-entregable-2/bienvenida');
       }
       else{
         setError("Sus credednciales son incorrectas")

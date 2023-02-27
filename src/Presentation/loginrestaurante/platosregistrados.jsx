@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function PedidosRealizados() {
+  const navigate = useNavigate()
   const [platosRegistrados, setPlatosRegistrados] = useState([]);
   const [restauranteId, setRestauranteId] = useState('');
 
@@ -25,7 +26,7 @@ function PedidosRealizados() {
     fetchPlatosRegistrados();
   }, [restauranteId]);
   const regresar = function(){
-    window.location.href='/2023-0-pw-entregable-2/bienvenida';
+    navigate('/2023-0-pw-entregable-2/bienvenida');
   }
   return (
     <div>

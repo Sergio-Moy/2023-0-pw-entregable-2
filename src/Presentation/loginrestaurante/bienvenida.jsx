@@ -1,7 +1,9 @@
 import React, { useState ,useEffect } from 'react';
 import './bienvenida.css'
 import TopNav from '../Global/TopNav';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+  const navigate = useNavigate()
     const [value, setValue] = useState('');
   
 
@@ -17,17 +19,17 @@ const Login = () => {
   const cerrarsesion =  function(
     
 ) {
-  window.location.href = '/2023-0-pw-entregable-2/loginpage';
+  navigate('/2023-0-pw-entregable-2/loginpage');
     }
 
   const registrarplato= function(){
-    window.location.href='/2023-0-pw-entregable-2/NuevoPlato';
+    navigate('/2023-0-pw-entregable-2/NuevoPlato');
   }
   const registrarcategoria= function(){
-    window.location.href='/2023-0-pw-entregable-2/registrarcategoria';
+    navigate('/2023-0-pw-entregable-2/registrarcategoria');
   }
   const mispedidos = function(){
-    window.location.href='/2023-0-pw-entregable-2/platosregistrados';
+    navigate('/2023-0-pw-entregable-2/platosregistrados');
   }
     
   
