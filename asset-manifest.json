@@ -1,33 +1,20 @@
 {
   "files": {
-    "main.css": "/2023-0-pw-entregable-2/static/css/main.c5ce50ae.css",
-    "main.js": "/2023-0-pw-entregable-2/static/js/main.7e8f3d50.js",
+    "main.css": "/2023-0-pw-entregable-2/static/css/main.4df5caf0.css",
+    "main.js": "/2023-0-pw-entregable-2/static/js/main.9ac39485.js",
     "static/media/gif": "/2023-0-pw-entregable-2/static/media/f8b0d8ba8a7fd9a480f88e9cd347ae6e.7e43fbd7a0bc995beee1.gif",
-    "static/media/coffee.png": "/2023-0-pw-entregable-2/static/media/coffee.fa4a9a75d5a02edc61ac.png",
+    "static/media/bg.jpg": "/2023-0-pw-entregable-2/static/media/bg.74b97845a552a3f70ebc.jpg",
     "static/media/lomo.png": "/2023-0-pw-entregable-2/static/media/lomo.3bc778632162cefa487e.png",
-    "static/media/sushi.png": "/2023-0-pw-entregable-2/static/media/sushi.63aa92a7748d8dd99bea.png",
     "static/media/Raleway.ttf": "/2023-0-pw-entregable-2/static/media/Raleway.c268e80ba67c4a294054.ttf",
     "static/media/burger.png": "/2023-0-pw-entregable-2/static/media/burger.337b65509b00afe21957.png",
-    "static/media/chifa.png": "/2023-0-pw-entregable-2/static/media/chifa.827c3e01f693c52fe322.png",
-    "static/media/starbucks.png": "/2023-0-pw-entregable-2/static/media/starbucks.08320477906ac9ba6c91.png",
-    "static/media/Logo.png": "/2023-0-pw-entregable-2/static/media/Logo.8c40af6687b662acafb0.png",
-    "static/media/bg.jpg": "/2023-0-pw-entregable-2/static/media/bg.10da9ceb87317ebc0c58.jpg",
-    "static/media/cafeteria.png": "/2023-0-pw-entregable-2/static/media/cafeteria.9169f46aa87b6f17274a.png",
-    "static/media/donuts.png": "/2023-0-pw-entregable-2/static/media/donuts.1968cac40bfac118bf3d.png",
-    "static/media/gogreen.png": "/2023-0-pw-entregable-2/static/media/gogreen.08d786225cf3728adaa5.png",
-    "static/media/nevera.png": "/2023-0-pw-entregable-2/static/media/nevera.1e01c7ddde2c002867a5.png",
-    "static/media/2550260.png": "/2023-0-pw-entregable-2/static/media/2550260.24c0456360bfc7dfc8e5.png",
-    "static/media/quiosco.png": "/2023-0-pw-entregable-2/static/media/quiosco.ba59da7a693415198c02.png",
-    "static/media/sushi.webp": "/2023-0-pw-entregable-2/static/media/sushi.a21bcedfc629a5412217.webp",
-    "static/media/momenti.webp": "/2023-0-pw-entregable-2/static/media/momenti.de807b11451121ea7088.webp",
-    "static/media/bembos.webp": "/2023-0-pw-entregable-2/static/media/bembos.461dfdf6fbf055eddd16.webp",
-    "static/media/listo.webp": "/2023-0-pw-entregable-2/static/media/listo.14d8743f380a69e01907.webp",
+    "static/media/chifa.png": "/2023-0-pw-entregable-2/static/media/chifa.52c75606c80b46301593.png",
+    "static/media/Logo.png": "/2023-0-pw-entregable-2/static/media/Logo.46a53a7f4348f228a38d.png",
     "index.html": "/2023-0-pw-entregable-2/index.html",
-    "main.c5ce50ae.css.map": "/2023-0-pw-entregable-2/static/css/main.c5ce50ae.css.map",
-    "main.7e8f3d50.js.map": "/2023-0-pw-entregable-2/static/js/main.7e8f3d50.js.map"
+    "main.4df5caf0.css.map": "/2023-0-pw-entregable-2/static/css/main.4df5caf0.css.map",
+    "main.9ac39485.js.map": "/2023-0-pw-entregable-2/static/js/main.9ac39485.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5ce50ae.css",
-    "static/js/main.7e8f3d50.js"
+    "static/css/main.4df5caf0.css",
+    "static/js/main.9ac39485.js"
   ]
 }
