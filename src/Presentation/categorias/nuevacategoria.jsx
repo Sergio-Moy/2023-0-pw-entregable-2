@@ -53,17 +53,19 @@ const Categoria = () => {
     await rawResponse.json().then((data) => {
       setCategories(data.categorias);
     });
+    
   };
 
   const getData = async (categoriaId, restauranteId) => {
     const rawResponse = await fetch(
-      "https://restaurantes20194359.azurewebsites.net/backend/platos_10/listar?categoria=" +
+      "https://restaurantes20194359.azurewebsites.net/backend/platos_1000/listar?categoria=" +
         categoriaId +
         "&restaurante=" +
         restauranteId
     );
     await rawResponse.json().then((data) => {
       setPlatos(data.platos_10);
+      console.log("CAMBIOSS",data.platos_10)
     });
   };
 
