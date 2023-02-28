@@ -155,7 +155,7 @@ function Pedidoregistro () {
             <option value="">Selecciona un Restaurante</option>
             {
                 ListaRestaurante.map(function(cat){
-                    return <option value={ cat.id }>
+                    return <option value={ cat.nombre }>
                         { cat.nombre }
                     </option>
                 })

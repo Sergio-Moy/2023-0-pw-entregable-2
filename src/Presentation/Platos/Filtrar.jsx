@@ -11,10 +11,10 @@ function Filtro(){
     const navigate = useNavigate()
         const obtenerCategoriasAsyncAwait = async function() {
           try {
-                const response = await fetch(`https://restaurantes20194359.azurewebsites.net/backend/categorias_10/listar?restaurante=-1`)
+                const response = await fetch(`https://restaurantes20194359.azurewebsites.net/backend/ObtenerSoloRestaurante_7/listar?codigo=-1`)
                 const data = await response.json()//Se obtiene la data en forma de objeto
             if(data.error === ""){
-                setListaCategorias(data.pedidos)//Variable de estado
+                setListaCategorias(data.Pedidos)//Variable de estado
             }else{
                 setError(data.error)
             }
@@ -31,6 +31,10 @@ function Filtro(){
     
     const FiltrarLista = []
     listaCategorias.map(function(cat){
+        FiltrarLista.push(cat.nombre)
+    })
+    /*
+    listaCategorias.map(function(cat){
         if(FiltrarLista.length >= 1){
                 console.log("FILTRANDO")
                 FiltrarLista.forEach(function(lista,index){
@@ -45,6 +49,7 @@ function Filtro(){
             FiltrarLista.push(cat.restaurante.nombre)
         }     
     })
+    */
     console.log("FILTRADO",FiltrarLista)
     
     
