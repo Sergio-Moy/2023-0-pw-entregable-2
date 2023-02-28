@@ -3,6 +3,7 @@ import burger from "../../Style/img/burger.png";
 import lomo from "../../Style/img/lomo.png";
 import chifa from "../../Style/img/chifa.png";
 import TopNav from "../Global/TopNav";
+import { Link } from "react-router-dom";
 
 const RestaurantCard = ({ data }) => (
   <div className="card2">
@@ -78,6 +79,13 @@ const Ofertas = () => {
           <RestaurantCard key={restaurant.id} restaurant={restaurant} />
         ))} */}
       </div>
+      <div className="centrar">
+      <Link to="/2023-0-pw-entregable-2/pedidoregistro" style={{margin : "1%"}}>Registrar un pedido</Link>
+      <br/><br/>
+      <Link to="/2023-0-pw-entregable-2/buscar" style={{margin : "1%"}}>Buscar un pedido</Link>
+      <br/>
+      </div>
+      <br/>
     </div>
   );
 };

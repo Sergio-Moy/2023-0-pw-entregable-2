@@ -31,6 +31,9 @@ const Login = () => {
   const mispedidos = function(){
     navigate('/2023-0-pw-entregable-2/platosregistrados');
   }
+  const registrarentrega = function(){
+    navigate('/2023-0-pw-entregable-2/registrarentrega')
+  }
     
   
 
@@ -68,7 +71,14 @@ const Login = () => {
     <button className='botonbienvenida' onClick={mispedidos}>
   <span>Mis pedidos</span>
 </button>
+</div>
+<div>
+    <button className='botonbienvenida' onClick={registrarentrega}>
+  <span>Registrar una entrega</span>
+</button>
     </div>
+
+
 
    
    

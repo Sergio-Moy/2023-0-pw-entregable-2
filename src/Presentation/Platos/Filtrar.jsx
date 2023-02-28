@@ -79,7 +79,7 @@ function Filtro(){
     }
 
     return <div>
-    <TopNav category={3}/>
+    <TopNav category={1}/>
         <br/>
     <div className="mt-4 mb-4">
         <h1>Restaurantes</h1>

@@ -81,6 +81,8 @@ function ListadoRestaurantes(){
                 <Link to="/2023-0-pw-entregable-2/categorias" style={{margin : "1%"}}>Ver categorías de platos</Link>
                 <br />
                 <Link to="/2023-0-pw-entregable-2/ofertas" style={{margin : "1%"}}>Ver Ofertas</Link>
+                <br />
+                <Link to="/2023-0-pw-entregable-2/filtro" style={{margin : "1%"}}>Ver Platos por Restaurante</Link>
                 </div>
             <div className='col'></div>
         </div>

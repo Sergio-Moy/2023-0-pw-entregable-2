@@ -130,7 +130,7 @@ function Platos(props){
     
    
     return <div>
-        <TopNav category={3}/>
+        <TopNav category={1}/>
         <br/>
         <h1>Registrar una nueva categoria</h1>
         <br/>
